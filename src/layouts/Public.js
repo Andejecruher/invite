@@ -1,12 +1,19 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
-import Typography from '@mui/material/Typography';
+import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import { Container } from '@mui/material';
 
-const drawerWidth = 300;
+const drawerWidth = 470;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -33,11 +40,11 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   padding: theme.spacing(0, 1),
   // necessary for content to be below app bar
   ...theme.mixins.toolbar,
-  justifyContent: 'flex-end',
+  justifyContent: 'flex-start',
 }));
 
 export default function PersistentDrawerLeft() {
-  const [open, setOpen] = React.useState(true);
+  const [open] = useState(true);
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
@@ -52,14 +59,26 @@ export default function PersistentDrawerLeft() {
         }}
         variant="persistent"
         anchor="left"
-        open={open}
+        open={true}
       >
-        <DrawerHeader>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
-          </Typography>
-        </DrawerHeader>
-        <Divider />
+        <Container>
+          <DrawerHeader>
+            <h1>Logo</h1>
+          </DrawerHeader>
+          <Divider />
+          <List>
+            {['All mail', 'Trash', 'Spam'].map((text, index) => (
+              <ListItem key={text} disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                  </ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Container>
       </Drawer>
       <Main open={open}>
 
