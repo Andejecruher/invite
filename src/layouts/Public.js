@@ -70,7 +70,7 @@ export default function PersistentDrawerLeft() {
         <Container>
           <DrawerHeader>
             <div>
-              <img width="200" src="https://i.postimg.cc/hPW6L8Ds/kisspng-wedding-invitation-bridegroom-clip-art-bride-and-groom-5b10fe3602bda4-1847344215278403100112.png" alt="logo" />
+              <img width="100" src="https://i.postimg.cc/BZp4MQ6R/anillo-de-bodas.png" alt="logo" />
               <h1>Valeria  & Orlando</h1>
               <p>15.11.2023</p>
             </div>
