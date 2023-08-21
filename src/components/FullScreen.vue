@@ -2,9 +2,13 @@
     <div class="full-screen">
       <img src="../assets/banner6.jpg" alt="Background" class="background-image">
       <div class="overlay">
-        <h1 id="name">Valeria & Orlando</h1>
+        <transition name="name" mode="in-out">
+        <h1 id="name" v-if="animation">Valeria & Orlando</h1>
+        </transition>
         <div class="countdown">
-            <CountReverse />
+          <transition name="name" mode="in-out">
+            <CountReverse v-if="animation"/>
+          </transition>
         </div>
       </div>
       <transition name="heart">
@@ -24,12 +28,17 @@
       return {
         countdown: 10, // Cambia este valor al tiempo deseado en segundos
         showHeart: true,
+        animation: false,
       };
     },
     mounted() {
       this.startCountdown();
+      this.startAnimation();
     },
     methods: {
+      startAnimation() {
+        this.animation = true;
+      },
       startCountdown() {
         let timer = setInterval(() => {
           if (this.countdown > 0) {
@@ -46,8 +55,8 @@
   <style scoped>
   #name {
   display: block;
-  font-size: 85px;
-  color: #bd945a;
+  font-size: 75px;
+  color: white;
   font-family: "Alex Brush", cursive;
   font-weight: 500;
   display: block;
@@ -70,7 +79,7 @@
   
   .overlay {
     position: absolute;
-    top: -35%;
+    top: -30%;
     left: -15%;
     width: 100%;
     height: 100%;
@@ -99,6 +108,20 @@
     font-size: 2rem;
     animation: heart-bounce 1s infinite;
   }
+
+  .name-enter-active{
+    animation: heart-bounce 1s infinite;
+  }
+.name-leave-active {
+  animation: heart-bounce 1s infinite;
+}
+
+.name-enter-from {
+  opacity: 1;
+}
+.name-enter-to {
+  opacity: 1;
+}
   
   @keyframes heart-bounce {
     0%, 100% {
@@ -108,6 +131,6 @@
       transform: translateY(-20px);
     }
   }
-  
+
   </style>
   
