@@ -1,12 +1,13 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-  </div>
+  <FullScreen />
 </template>
 
 <script>
-
+import FullScreen from "@/components/FullScreen.vue";
 export default {
-  name: 'HomeView',
-}
+  name: "HomeView",
+  components: {
+    FullScreen,
+  },
+};
 </script>

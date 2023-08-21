@@ -1,16 +1,17 @@
 <template>
   <v-layout>
     <v-navigation-drawer
+      v-model="clicked"
       permanent
       location="left"
-      width="350"
-      class="pa-10"
+      width="400"
+      class="drawer-menu"
       color="#F6F1F0"
     >
       <template v-slot:prepend>
         <div class="pa-2 text-center" center>
           <img
-            width="60"
+            width="70"
             src="https://i.postimg.cc/BZp4MQ6R/anillo-de-bodas.png"
             alt=""
             class="anillos"
@@ -64,16 +65,13 @@
           <p>
             © 2023 Valeria & Orlando. Boda
             <br />
-            21 Diciembre 2023. Cintalapa, Chiapas, México.
+            21 Diciembre 2023. Chiapa de corzo, Chiapas, México.
           </p>
         </div>
       </template>
     </v-navigation-drawer>
-
     <v-main>
-      <v-container>
-        <router-view></router-view>
-      </v-container>
+      <router-view />
     </v-main>
   </v-layout>
 </template>
@@ -104,7 +102,7 @@ export default {
 
 .name {
   display: block;
-  font-size: 36px;
+  font-size: 35px;
   color: #bd945a;
   font-family: "Alex Brush", cursive;
   font-weight: 400;
@@ -118,7 +116,7 @@ export default {
   font-weight: 400;
   text-transform: none;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 5px;
   color: #000;
   margin-bottom: 5px;
@@ -142,6 +140,19 @@ export default {
 }
 
 .hover-underline {
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  padding: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.5em;
+  letter-spacing: 0.5px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  border-bottom: 1px solid transparent;
   position: relative;
   cursor: pointer;
 }
@@ -185,5 +196,15 @@ export default {
 .no-background {
   background-color: transparent !important;
 }
-
+.v-navigation-drawer__content .menu {
+  padding: 50px;
+  margin-top: 0px !important;
+  background: transparent;
+}
+.menu .v-list-item .v-list-item-title {
+  font-size: 18px !important;
+}
+.drawer-menu {
+  padding: 80px 45px 45px !important;
+}
 </style>
