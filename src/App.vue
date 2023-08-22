@@ -235,7 +235,7 @@ export default {
   font-size: 18px !important;
 }
 .drawer-menu {
-  padding: 80px 45px 45px !important;
+  padding: 40px 45px 45px !important;
 }
 .fade-enter-active,
 .fade-leave-active {
