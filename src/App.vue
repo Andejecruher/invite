@@ -1,92 +1,100 @@
 <template>
-  <transition name="fade" mode="out-in">
-    <v-layout v-if="layout">
-      <v-navigation-drawer
-        v-model="clicked"
-        permanent
-        location="left"
-        width="400"
-        class="drawer-menu"
-        color="#F6F1F0"
-      >
-        <template v-slot:prepend>
-          <div class="pa-2 text-center" center>
-            <transition name="anillo" mode="in-out">
-              <div v-if="layout">
-                <img
-                  width="70"
-                  src="https://i.postimg.cc/BZp4MQ6R/anillo-de-bodas.png"
-                  alt=""
-                  class="anillos"
-                />
-              </div>
-            </transition>
-            <p class="name">Valeria & Orlando</p>
-            <p class="date">21.12.2023</p>
-          </div>
-        </template>
+  <div id="home">
+    <transition name="fade" mode="out-in">
+      <v-layout v-if="layout">
+        <v-navigation-drawer
+          v-model="clicked"
+          :permanent="!$vuetify.display.mobile"
+          :mini-variant="$vuetify.display.mobile"
+          :clipped="$vuetify.display.mobile"
+          :disable-resize-watcher="$vuetify.display.mobile"
+          :temporary="$vuetify.display.mobile"
+          location="left"
+          :width="drawerWidth"
+          class="drawer-menu"
+          color="#F6F1F0"
+        >
+          <template v-slot:prepend>
+            <div class="pa-2 text-center" center>
+              <transition name="anillo" mode="in-out">
+                <div v-if="layout">
+                  <img
+                    width="70"
+                    src="https://i.postimg.cc/BZp4MQ6R/anillo-de-bodas.png"
+                    alt=""
+                    class="anillos"
+                  />
+                </div>
+              </transition>
+              <p class="name">Valeria & Orlando</p>
+              <p class="date">21.12.2023</p>
+            </div>
+          </template>
 
-        <v-list center class="mt-10 menu" variant="text">
-          <v-list-item
-            class="hover-underline"
-            title="Inicio"
-            value="inicio"
-          ></v-list-item>
-          <v-list-item
-            class="hover-underline"
-            title="Bienvenida"
-            value="bienvenida"
-          ></v-list-item>
-          <v-list-item
-            class="hover-underline"
-            title="Ceremonia y Recepción"
-            value="ceremonia"
-          ></v-list-item>
-          <v-list-item
-            class="hover-underline"
-            title="Codigo de Vestimenta"
-            value="codigo"
-          ></v-list-item>
-          <v-list-item
-            class="hover-underline"
-            title="Pases"
-            value="pases"
-          ></v-list-item>
-          <v-list-item
-            class="hover-underline"
-            title="Mesa de Regalos"
-            value="mesa"
-          ></v-list-item>
-          <v-list-item
-            class="hover-underline"
-            title="Confirmar Asistencia"
-            value="confirmacion"
-          ></v-list-item>
-        </v-list>
+          <v-list center class="mt-10 menu" variant="text">
+            <v-list-item
+              class="hover-underline"
+              title="Inicio"
+              value="inicio"
+            ></v-list-item>
+            <v-list-item
+              class="hover-underline"
+              title="Bienvenida"
+              value="bienvenida"
+            ></v-list-item>
+            <v-list-item
+              class="hover-underline"
+              title="Ceremonia y Recepción"
+              value="ceremonia"
+            ></v-list-item>
+            <v-list-item
+              class="hover-underline"
+              title="Codigo de Vestimenta"
+              value="codigo"
+            ></v-list-item>
+            <v-list-item
+              class="hover-underline"
+              title="Pases"
+              value="pases"
+            ></v-list-item>
+            <v-list-item
+              class="hover-underline"
+              title="Mesa de Regalos"
+              value="mesa"
+            ></v-list-item>
+            <v-list-item
+              class="hover-underline"
+              title="Confirmar Asistencia"
+              value="confirmacion"
+            ></v-list-item>
+          </v-list>
 
-        <template v-slot:append>
-          <div class="pa-2 footer1">
-            <div class="separator"></div>
-            <p>
-              © 2023 Valeria & Orlando. Boda
-              <br />
-              21 Diciembre 2023. Chiapa de corzo, Chiapas, México.
-            </p>
-          </div>
-        </template>
-      </v-navigation-drawer>
-      <v-main>
-        <router-view />
-      </v-main>
-    </v-layout>
-  </transition>
-  <transition name="fade" mode="in-out">
-    <LoaderHeart v-if="loading" />
-  </transition>
+          <template v-slot:append>
+            <div class="pa-2 footer1">
+              <div class="separator"></div>
+              <p>
+                © 2023 Valeria & Orlando. Boda
+                <br />
+                21 Diciembre 2023. Chiapa de corzo, Chiapas, México.
+              </p>
+            </div>
+          </template>
+        </v-navigation-drawer>
+        <v-main>
+          <router-view />
+        </v-main>
+      </v-layout>
+    </transition>
+
+    <transition name="fade" mode="in-out">
+      <LoaderHeart v-if="loading" />
+    </transition>
+  </div>
 </template>
 
 <script>
 import LoaderHeart from "./components/LoaderHeart.vue";
+
 export default {
   name: "App",
   components: {
@@ -97,6 +105,7 @@ export default {
       clicked: true,
       loading: true,
       layout: false,
+      drawerWidth: 425,
     };
   },
   mounted() {
@@ -121,6 +130,11 @@ export default {
   text-align: center;
   color: #000;
   font-weight: 400;
+}
+#home {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 .anillos {
   opacity: 0.6;
@@ -209,11 +223,7 @@ export default {
   line-height: 1.5rem;
   text-transform: none;
 }
-/* Estilos específicos del componente */
 .v-list-item__overlay {
-  background-color: transparent !important;
-}
-.no-background {
   background-color: transparent !important;
 }
 .v-navigation-drawer__content .menu {
@@ -238,7 +248,6 @@ export default {
 .fade-enter-to {
   opacity: 1;
 }
-
 .fade-leave-from {
   opacity: 1;
 }
@@ -251,16 +260,17 @@ export default {
 .anillo-leave-active {
   animation: heart-bounce 2s infinite;
 }
-
 .anillo-enter-from {
   opacity: 1;
 }
 .anillo-enter-to {
   opacity: 1;
 }
-
 .anillos:hover {
   cursor: pointer;
+  animation: girotresd 2s infinite;
+}
+.anillos:active {
   animation: girotresd 2s infinite;
 }
 @keyframes heart-bounce {
@@ -275,17 +285,31 @@ export default {
 
 @keyframes girotresd {
   40% {
-    transform: perspective(800px) translateZ(120px) rotateY(170deg);
+    transform: translateZ(120px) rotateY(170deg);
   }
   50% {
-    transform: perspective(800px) translateZ(120px) rotateY(190deg);
+    transform: translateZ(120px) rotateY(190deg);
   }
   80% {
-    transform: perspective(800px) translateZ(0px) rotateY(360deg);
+    transform: translateZ(0px) rotateY(360deg);
   }
   100% {
-    transform: perspective(800px) rotateY(360deg);
+    transform: rotateY(360deg);
   }
   /*Según donde pongamos el translateZ la animación tendrá una forma u otra*/
+}
+
+@media (max-width: 475px) {
+  .v-navigation-drawer__content .menu {
+    padding: 5px;
+    margin-top: 0px !important;
+    background: transparent;
+  }
+}
+
+@media (max-width: 320px) {
+  .drawer-menu {
+    padding: 30px 25px 20px !important;
+  }
 }
 </style>

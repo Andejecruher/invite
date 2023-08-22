@@ -6,7 +6,7 @@
           <div class="number">{{ timelineEvents[0].timeRemaining }}</div>
           <p>Dias</p>
         </v-col>
-        <v-col cols="3">     
+        <v-col cols="3">
           <div class="number">{{ timelineEvents[1].timeRemaining }}</div>
           <p>Horas</p>
         </v-col>
@@ -28,7 +28,7 @@ export default {
   name: "CountReverse",
   data() {
     return {
-      targetDate: new Date("2023-12-21 12:00:00"), // Cambia esta fecha a la que desees
+      targetDate: new Date("2023-12-21T20:45:00"), // Cambia esta fecha a la que desees
       timelineEvents: [
         { icon: "mdi-calendar-clock", text: "Días", timeRemaining: 0 },
         { icon: "mdi-clock", text: "Horas", timeRemaining: 0 },
@@ -55,7 +55,6 @@ export default {
     updateCountdown() {
       const now = new Date();
       const timeDifference = this.targetDate - now;
-
       if (timeDifference <= 0) {
         clearInterval(this.countdownInterval);
         return;
@@ -89,44 +88,72 @@ export default {
   color: white; /* Cambia el color del texto si es necesario */
 }
 
-.number{
-    font-size: 50px;
-    font-weight: bold;
-    margin-bottom: 20px;
+.number {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .v-card-title {
-    color: #bd945a;
-    font-family: 'Alex Brush', cursive;
-    display: block;
-    flex: none;
-    font-size: 2rem;
-    font-weight: 500;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    letter-spacing: 0.0125em;
-    min-width: 0;
-    overflow-wrap: normal;
-    overflow: hidden;
-    padding: 0.5rem 1rem;
-    text-overflow: ellipsis;
-    text-transform: none;
-    white-space: nowrap;
-    word-break: normal;
-    word-wrap: break-word;
+  color: #bd945a;
+  font-family: "Alex Brush", cursive;
+  display: block;
+  flex: none;
+  font-size: 2rem;
+  font-weight: 500;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  letter-spacing: 0.0125em;
+  min-width: 0;
+  overflow-wrap: normal;
+  overflow: hidden;
+  padding: 0.5rem 1rem;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
+  word-break: normal;
+  word-wrap: break-word;
 }
 
 .v-card-text {
-    flex: 1 1 auto;
-    font-family: monospace;
-    font-size: 20px;
-    font-weight: 400;
-    letter-spacing: 0.0178571429em;
-    padding: 1rem;
-    text-transform: none;
+  flex: 1 1 auto;
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.0178571429em;
+  padding: 1rem;
+  text-transform: none;
 }
-.v-card--variant-elevated, .v-card--variant-flat {
-    background: none;
-    color: white;
+.v-card--variant-elevated,
+.v-card--variant-flat {
+  background: none;
+  color: white;
+}
+
+@media (max-width: 425px) {
+  .number {
+    font-size: 22px;
+  }
+  .v-card-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 375px) {
+  .number {
+    font-size: 22px;
+  }
+  .v-card-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .number {
+    font-size: 22px;
+  }
+  .v-card-text {
+    font-size: 9px;
+  }
 }
 </style>
