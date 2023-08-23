@@ -1,0 +1,71 @@
+<template>
+  <div class="drees-code">
+    <v-container class="drees-code-container drees-reception-container">
+      <h2 class="title">Código de Vestimenta</h2>
+      <p class="subtitle">Formal</p>
+      <v-row align="center" justify="center">
+        <v-col xs="12" md="6" align="center" justify="center">
+          <div class="vestiment">
+            <v-img
+              width="150"
+              src="https://invites-now.com/wp-content/uploads/2023/01/suit-gris.png"
+            ></v-img>
+            <p class="type">Traje y Corbata</p>
+          </div>
+        </v-col>
+        <v-col cols="12" xs="12" md="6" align="center" justify="center">
+          <div class="vestiment">
+            <v-img
+              width="120"
+              src="https://invites-now.com/wp-content/uploads/2022/07/Dress_3_black-1.png"
+            ></v-img>
+            <p class="type">Vestido y Vestido Largo</p>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "DressCodeView",
+};
+</script>
+
+<style scoped>
+.dress-code {
+  position: relative;
+  font-family: "Cormorant Garamond", serif;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title {
+  font-family: "Alex Brush", cursive;
+  font-size: 60px;
+  color: #bd945a;
+}
+.subtitle {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
+  margin-top: 10px;
+  color: gray;
+  margin-bottom: 5%;
+}
+.type {
+  font-size: 25px;
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+}
+
+.drees-code-container {
+  margin-bottom: 15%;
+}
+
+.drees-reception-container {
+    margin-top: 10%;
+  }
+</style>

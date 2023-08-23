@@ -1,43 +1,16 @@
 <template>
   <v-container id="story" class="welcome-container" fluid>
     <v-row class="story">
-      <v-col xs="12" md="5">
-        <div
-          class="story-img animate-box fadeInLeft animated"
-          data-animate-effect="fadeInLeft"
-        >
-          <div class="img">
-            <img src="../assets/story.jpg" class="img-fluid" alt="" />
-          </div>
-        </div>
-      </v-col>
-      <v-col xs="12" md="7">
-        <h1 class="invitation-title">¡Te invitamos a nuestra Boda!</h1>
+      <v-col xs="12" md="12" class="mesa">
+        <h1 class="invitation-title">¡Mesa de regalos!</h1>
         <p class="invitation-message">
-          Es un honor para nosotros invitarte a compartir este día tan especial
-          en nuestras vidas. Estamos emocionados de celebrar nuestra unión y nos
-          encantaría que te unas a nosotros en esta ocasión única.
+          "La presencia de ustedes tiene un valor incalculable para nosotros. Si
+          bien su compañía es el regalo más preciado, si desean hacernos un
+          obsequio, apreciaríamos mucho que este fuese en efectivo. Para su
+          comodidad, hemos dispuesto una urna en la entrada del salón donde
+          podrán depositarlo junto a sus felicitaciones. Agradecemos
+          profundamente su consideración."
         </p>
-        <p class="invitation-message">
-          Tu presencia y cariño son lo más importante para nosotros, y esperamos
-          que puedas acompañarnos en este momento lleno de amor y felicidad.
-        </p>
-        <p class="invitation-message">
-          Te agradecemos por ser parte de nuestras vidas y esperamos verte en
-          este día tan especial.
-        </p>
-        <v-row>
-          <v-col cols="12" xs="12" md="6">
-            <h1 class="invitation-names">Padres de Valeria</h1>
-            <p>SUSANA HERNANDES</p>
-            <p>ROBERTO ESCARPULLI</p>
-          </v-col>
-          <v-col cols="12" xs="12" md="6">
-            <h1 class="invitation-names">Padres de Orlando</h1>
-            <p>MARILU CAMACHO</p>
-            <p>ESDRAS JIMENEZ</p>
-          </v-col>
-        </v-row>
       </v-col>
     </v-row>
   </v-container>
@@ -45,11 +18,14 @@
 
 <script>
 export default {
-  name: "WelcomeView",
+  name: "GiftTableView",
 };
 </script>
 
 <style scoped>
+.mesa {
+  padding: 130px 200px 230px;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;

@@ -16,20 +16,26 @@
       </div>
     </div>
     <transition name="heart">
-      <div class="heart">&#10084;</div>
+      <div class="heart">
+        <svg-icon type="mdi" :path="heart" size="40"/>
+      </div>
     </transition>
   </div>
 </template>
 
 <script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiHeartPulse } from '@mdi/js';
 import CountReverse from "./CountReverse.vue";
 export default {
   name: "FullScreen",
   components: {
     CountReverse,
+    SvgIcon,
   },
   data() {
     return {
+      heart: mdiHeartPulse,
       countdown: 10, // Cambia este valor al tiempo deseado en segundos
       showHeart: true,
       animation: false,
@@ -99,6 +105,7 @@ export default {
 }
 
 .heart {
+  cursor: pointer;
   position: absolute;
   top: 45%;
   left: -15%;
@@ -109,7 +116,6 @@ export default {
   align-items: center;
   justify-content: center;
   color: #bd945a;
-  font-size: 2rem;
   animation: heart-bounce 1s infinite;
 }
 
