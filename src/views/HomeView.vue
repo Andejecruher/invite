@@ -5,7 +5,8 @@
   <DressCodeView />
   <PassesView />
   <GiftTableView />
-  <ConfirmAttendanceForm />  
+  <ConfirmAttendanceForm />
+  <FooterView />
 </template>
 
 <script>
@@ -16,6 +17,7 @@ import DressCodeView from "@/components/DressCode.vue";
 import PassesView from "@/components/Passes.vue";
 import GiftTableView from "@/components/GiftTable.vue";
 import ConfirmAttendanceForm from "@/components/ConfirmAttendanceForm.vue";
+import FooterView from "@/components/Footer.vue";
 
 export default {
   name: "HomeView",
@@ -27,6 +29,7 @@ export default {
     PassesView,
     GiftTableView,
     ConfirmAttendanceForm,
+    FooterView,
   },
 };
 </script>
