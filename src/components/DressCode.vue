@@ -19,7 +19,7 @@
               width="120"
               src="https://invites-now.com/wp-content/uploads/2022/07/Dress_3_black-1.png"
             ></v-img>
-            <p class="type">Vestido y Vestido Largo</p>
+            <p class="type">Vestido Largo</p>
           </div>
         </v-col>
       </v-row>

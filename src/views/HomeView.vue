@@ -1,11 +1,11 @@
 <template>
-  <FullScreen />
-  <WelcomeView />
-  <CeremonyReceptionView />
-  <DressCodeView />
-  <PassesView />
-  <GiftTableView />
-  <ConfirmAttendanceForm />
+  <FullScreen id="FullScreen"/>
+  <WelcomeView id="WelcomeView"/>
+  <CeremonyReceptionView  id="CeremonyReceptionView"/>
+  <DressCodeView id="DressCodeView"/>
+  <PassesView id="PassesView"/>
+  <GiftTableView id="GiftTableView" />
+  <ConfirmAttendanceForm id="ConfirmAttendanceForm" />
   <FooterView />
 </template>
 

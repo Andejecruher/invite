@@ -1,13 +1,10 @@
 <template>
   <div id="home">
-    <transition name="fade" mode="out-in">
+    <transition name="fade" mode="in-out">
       <v-layout v-if="layout">
         <v-navigation-drawer
           v-model="clicked"
-          :permanent="!$vuetify.display.mobile"
-          :mini-variant="$vuetify.display.mobile"
-          :clipped="$vuetify.display.mobile"
-          :disable-resize-watcher="$vuetify.display.mobile"
+          :permanent="$vuetify.display.mobile"
           :temporary="$vuetify.display.mobile"
           location="left"
           :width="drawerWidth"
@@ -36,36 +33,43 @@
               class="hover-underline"
               title="Inicio"
               value="inicio"
+              @click="clickMenu('FullScreen')"
             ></v-list-item>
             <v-list-item
               class="hover-underline"
               title="Bienvenida"
               value="bienvenida"
+              @click="clickMenu('WelcomeView')"
             ></v-list-item>
             <v-list-item
               class="hover-underline"
               title="Ceremonia y Recepción"
               value="ceremonia"
+              @click="clickMenu('CeremonyReceptionView')"
             ></v-list-item>
             <v-list-item
               class="hover-underline"
               title="Codigo de Vestimenta"
               value="codigo"
+              @click="clickMenu('DressCodeView')"
             ></v-list-item>
             <v-list-item
               class="hover-underline"
               title="Pases"
               value="pases"
+              @click="clickMenu('PassesView')"
             ></v-list-item>
             <v-list-item
               class="hover-underline"
               title="Mesa de Regalos"
               value="mesa"
+              @click="clickMenu('GiftTableView')"
             ></v-list-item>
             <v-list-item
               class="hover-underline"
               title="Confirmar Asistencia"
               value="confirmacion"
+              @click="clickMenu('ConfirmAttendanceForm')"
             ></v-list-item>
           </v-list>
 
@@ -117,6 +121,19 @@ export default {
         this.layout = true;
         this.loading = false;
       }, 2000);
+    },
+    clickMenu(name) {
+      if (name === "FullScreen") {
+        scrollTo({
+        top: 0, // Cambia esta posición según tus necesidades
+        behavior: 'smooth'
+      });
+      } else {
+        const section = document.querySelector(`#${name}`);
+        section.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
     },
   },
 };
