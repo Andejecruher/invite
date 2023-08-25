@@ -1,7 +1,7 @@
 <template>
   <FullScreen id="FullScreen"/>
   <WelcomeView id="WelcomeView"/>
-  <CeremonyReceptionView  id="CeremonyReceptionView"/>
+  <CeremonyReceptionView id="CeremonyReceptionView"/>
   <DressCodeView id="DressCodeView"/>
   <PassesView id="PassesView"/>
   <GiftTableView id="GiftTableView" />

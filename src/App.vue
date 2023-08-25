@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div>
     <transition name="fade" mode="in-out">
       <v-layout v-if="layout">
         <v-navigation-drawer
@@ -123,6 +123,9 @@ export default {
       }, 2000);
     },
     clickMenu(name) {
+      if(this.$vuetify.display.mobile) {
+        this.clicked = false;
+      }
       if (name === "FullScreen") {
         scrollTo({
         top: 0, // Cambia esta posición según tus necesidades
@@ -147,8 +150,6 @@ export default {
   text-align: center;
   color: #000;
   font-weight: 400;
-}
-#home {
   width: 100%;
   overflow: hidden;
   position: relative;

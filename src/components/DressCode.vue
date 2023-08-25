@@ -7,7 +7,7 @@
         <v-col xs="12" md="6" align="center" justify="center">
           <div class="vestiment">
             <v-img
-              width="150"
+              :width="whiteTraje"
               src="https://invites-now.com/wp-content/uploads/2023/01/suit-gris.png"
             ></v-img>
             <p class="type">Traje y Corbata</p>
@@ -16,7 +16,7 @@
         <v-col cols="12" xs="12" md="6" align="center" justify="center">
           <div class="vestiment">
             <v-img
-              width="120"
+              :width="whiteVestido"
               src="https://invites-now.com/wp-content/uploads/2022/07/Dress_3_black-1.png"
             ></v-img>
             <p class="type">Vestido Largo</p>
@@ -30,15 +30,27 @@
 <script>
 export default {
   name: "DressCodeView",
+  data() {
+    return {
+      whiteTraje: 150,
+      whiteVestido: 120,
+    };
+  },
+  mounted() {
+    if (this.$vuetify.display.mobile) {
+      this.whiteTraje = 100;
+      this.whiteVestido = 100;
+    }
+  },
 };
 </script>
 
 <style scoped>
-.dress-code {
+.drees-code {
   position: relative;
   font-family: "Cormorant Garamond", serif;
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,4 +80,28 @@ export default {
 .drees-reception-container {
     margin-top: 10%;
   }
+
+@media screen and (max-width: 320px) {
+  .title {
+  font-size: 30px;
+}
+.subtitle {
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 5%;
+}
+.type {
+  font-size: 14px;
+  font-family: "Cormorant Garamond", serif;
+  text-align: center;
+}
+
+.drees-code-container {
+  margin-bottom: 20%;
+}
+
+.drees-reception-container {
+    margin-top: 15%;
+  }
+}
 </style>

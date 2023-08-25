@@ -5,7 +5,7 @@
           <v-col cols="6" class="text-center">
             <svg-icon type="mdi" :path="ceremony" size="60" />
             <h1 class="title">Ceremonia</h1>
-            <v-divider :thickness="5" class="divider"></v-divider>
+            <v-divider :thickness="grosor" class="divider"></v-divider>
             <p class="info">Jueves 21 de Diciembre del 2023 <br /> 08:00 p.m </p>
             <p class="info">Salon " Las Haditas ", Chiapa de corzo</p>
             <p class="info">Rumbo a, Carr. al Puente Viejo 89, <br /> Ribera Cahuaré, Cahuaré, 29160 Chiapa de Corzo, Chis.</p>
@@ -14,7 +14,7 @@
           <v-col cols="6">
             <svg-icon type="mdi" :path="reception" size="60"/>
             <h1 class="title">Recepción</h1>
-            <v-divider :thickness="5" class="divider"></v-divider>
+            <v-divider :thickness="grosor" class="divider"></v-divider>
             <p class="info">Jueves 21 de Diciembre del 2023 <br /> 08:45 p.m </p>
             <p class="info">Salon " Las Haditas ", Chiapa de corzo</p>
             <p class="info">Rumbo a, Carr. al Puente Viejo 89, <br /> Ribera Cahuaré, Cahuaré, 29160 Chiapa de Corzo, Chis.</p>
@@ -56,7 +56,11 @@
         reception: mdiGlassWine,
         modalVisible: false,
         title: "",
+        grosor: 5,
       };
+    },
+    mounted() {
+      this.grosor = this.$vuetify.display.mobile ? 5 : 2;
     },
     methods: {
       openModal(title) {
@@ -71,7 +75,7 @@
   </script>
   
   <style scoped>
-  .ceremony-reception-container {
+    .ceremony-reception-container {
     margin-top: 10%;
   }
   .btn{
@@ -83,7 +87,7 @@
     position: relative;
     font-family: "Cormorant Garamond", serif;
     width: 100%;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,6 +127,18 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+  }
+
+  @media (max-width: 320px) {
+    .title {
+      font-size: 18px;
+    }
+    .info {
+      font-size: 12px;
+    }
+    .btn{
+      font-size: 12px;
+    }
   }
   </style>
   

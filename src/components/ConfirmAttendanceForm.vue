@@ -1,7 +1,7 @@
 <template>
   <v-container class="full-height">
     <v-row class="full-height" justify="center" align="center">
-      <v-col cols="6">
+      <v-col cols="12" xs="12" md="6">
         <div class="confirm-info">
           <h2 class="title">Confirmar Asistencia</h2>
           <p class="message">
@@ -9,7 +9,7 @@
           </p>
         </div>
       </v-col>
-      <v-col cols="6">
+      <v-col cols="12" xs="12" md="6">
         <v-form @submit.stop="submitForm" class="form">
           <h2 class="title-form">Asistirás a nuestra boda</h2>
           <v-divider></v-divider>
@@ -67,7 +67,7 @@ export default {
 
 <style scoped>
 .full-height {
-  height: 100vh;
+  height: auto;
   width: 100%;
 }
 .confirm-info {

@@ -1,7 +1,7 @@
 <template>
     <v-container id="story" class="welcome-container" fluid>
       <v-row class="story">
-        <v-col xs="12" md="5">
+        <v-col cols="12" xs="12" md="5">
           <div
             class="story-img animate-box fadeInLeft animated"
             data-animate-effect="fadeInLeft"
@@ -11,7 +11,7 @@
             </div>
           </div>
         </v-col>
-        <v-col xs="12" md="7">
+        <v-col cols="12" xs="12" md="7">
           <h1 class="invitation-title">¡Fam. Escarpulli Hernández !</h1>
           <p class="invitation-message text-center">
             # PASES 3
@@ -38,7 +38,7 @@
     position: relative;
     font-family: "Cormorant Garamond", serif;
     width: 100%;
-    height: 100vh; /* Ocupar el 100% de la altura de la pantalla */
+    height: auto; /* Ocupar el 100% de la altura de la pantalla */
     display: flex;
     align-items: center;
     justify-content: center;

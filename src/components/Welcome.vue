@@ -1,46 +1,49 @@
 <template>
-  <v-container id="story" class="welcome-container" fluid>
-    <v-row class="story">
-      <v-col xs="12" md="5">
-        <div
-          class="story-img animate-box fadeInLeft animated"
-          data-animate-effect="fadeInLeft"
-        >
-          <div class="img">
-            <img src="../assets/story.jpg" class="img-fluid" alt="" />
+  <div class="welcome-container">
+    <v-container id="story">
+      <v-row class="story">
+        <v-col cols="12" xs="12" md="5">
+          <div
+            class="story-img animate-box fadeInLeft animated"
+            data-animate-effect="fadeInLeft"
+          >
+            <div class="img">
+              <img src="../assets/story.jpg" class="img-fluid" alt="" />
+            </div>
           </div>
-        </div>
-      </v-col>
-      <v-col xs="12" md="7">
-        <h1 class="invitation-title">¡Te invitamos a nuestra Boda!</h1>
-        <p class="invitation-message">
-          Es un honor para nosotros invitarte a compartir este día tan especial
-          en nuestras vidas. Estamos emocionados de celebrar nuestra unión y nos
-          encantaría que te unas a nosotros en esta ocasión única.
-        </p>
-        <p class="invitation-message">
-          Tu presencia y cariño son lo más importante para nosotros, y esperamos
-          que puedas acompañarnos en este momento lleno de amor y felicidad.
-        </p>
-        <p class="invitation-message">
-          Te agradecemos por ser parte de nuestras vidas y esperamos verte en
-          este día tan especial.
-        </p>
-        <v-row>
-          <v-col cols="12" xs="12" md="6">
-            <h1 class="invitation-names">Padres de Valeria</h1>
-            <p>SUSANA HERNANDES</p>
-            <p>ROBERTO ESCARPULLI</p>
-          </v-col>
-          <v-col cols="12" xs="12" md="6">
-            <h1 class="invitation-names">Padres de Orlando</h1>
-            <p>MARILU CAMACHO</p>
-            <p>ESDRAS JIMENEZ</p>
-          </v-col>
-        </v-row>
-      </v-col>
-    </v-row>
-  </v-container>
+        </v-col>
+        <v-col cols="12" xs="12" md="7">
+          <h1 class="invitation-title">¡Te invitamos a nuestra Boda!</h1>
+          <p class="invitation-message">
+            Es un honor para nosotros invitarte a compartir este día tan
+            especial en nuestras vidas. Estamos emocionados de celebrar nuestra
+            unión y nos encantaría que te unas a nosotros en esta ocasión única.
+          </p>
+          <p class="invitation-message">
+            Tu presencia y cariño son lo más importante para nosotros, y
+            esperamos que puedas acompañarnos en este momento lleno de amor y
+            felicidad.
+          </p>
+          <p class="invitation-message">
+            Te agradecemos por ser parte de nuestras vidas y esperamos verte en
+            este día tan especial.
+          </p>
+          <v-row>
+            <v-col cols="12" xs="12" md="6">
+              <h1 class="invitation-names">Padres de Valeria</h1>
+              <p class="invitation-names-p">SUSANA HERNANDES</p>
+              <p class="invitation-names-p">ROBERTO ESCARPULLI</p>
+            </v-col>
+            <v-col cols="12" xs="12" md="6">
+              <h1 class="invitation-names">Padres de Orlando</h1>
+              <p class="invitation-names-p">MARILU CAMACHO</p>
+              <p class="invitation-names-p">ESDRAS JIMENEZ</p>
+            </v-col>
+          </v-row>
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 
 <script>
@@ -58,7 +61,7 @@ export default {
   position: relative;
   font-family: "Cormorant Garamond", serif;
   width: 100%;
-  height: 100vh; /* Ocupar el 100% de la altura de la pantalla */
+  height: auto; /* Ocupar el 100% de la altura de la pantalla */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,5 +183,48 @@ export default {
     top: 15px;
     right: 45px;
   }
+}
+
+@media (max-width: 320px) {
+  .story-img .story-img-2 {
+    width: 20% !important;
+    height: 120px;
+    position: absolute;
+    top: 15px;
+    right: 45px;
+  }
+  .invitation-title {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    font-size: 22px;
+    color: #bd945a;
+    margin-bottom: 10px;
+  }
+
+  .invitation-names {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    color: #bd945a;
+    margin-bottom: 16px;
+  }
+  .invitation-message {
+    text-align: left;
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  .invitation-names {
+    font-size: 16px;
+  }
+  .invitation-names-p {
+    font-size: 12px;
+  }
+
+  .story-img{
+    width: 60%;
+    margin-left: 20%;
+}
+
 }
 </style>
