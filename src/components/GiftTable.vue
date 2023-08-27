@@ -1,7 +1,7 @@
 <template>
-  <v-container id="story" class="welcome-container" fluid>
-    <v-row class="story">
-      <v-col xs="12" md="12" class="mesa">
+  <v-container id="story" class="welcome-container" fluid justify="center" align="center">
+    <v-row class="story" justify="center" align="center">
+      <v-col xs="12" md="12" class="mesa" justify="center" align="center">
         <h1 class="invitation-title">¡Mesa de regalos!</h1>
         <p class="invitation-message">
           "La presencia de ustedes tiene un valor incalculable para nosotros. Si
@@ -25,6 +25,8 @@ export default {
 <style scoped>
 .mesa {
   padding: 130px 200px 230px;
+  margin-top: 10%;
+  margin-bottom: 15%;
 }
 .img-fluid {
   max-width: 100%;
@@ -34,7 +36,7 @@ export default {
   position: relative;
   font-family: "Cormorant Garamond", serif;
   width: 100%;
-  height: 100vh; /* Ocupar el 100% de la altura de la pantalla */
+  height: auto; /* Ocupar el 100% de la altura de la pantalla */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -56,7 +58,6 @@ export default {
 }
 
 .invitation-title {
-  margin-top: 15%;
   font-family: "Alex Brush", cursive;
   font-size: 70px;
   color: #bd945a;
@@ -156,5 +157,43 @@ export default {
     top: 15px;
     right: 45px;
   }
+}
+
+@media screen and (max-width: 425px) {
+  .invitation-title {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    font-size: 30px;
+    color: #bd945a;
+    margin-bottom: 20px;
+  }
+  .invitation-message {
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .invitation-names {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    color: #bd945a;
+    margin-bottom: 26px;
+  }
+  .text-center {
+    font-size: 18px;
+    text-align: center;
+  }
+  .story-img {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20%;
+  }
+
+  .mesa{
+    padding: 20px 20px 20px;
+    margin-top: 15%;
+    margin-bottom: 25%;
+  }
+  
 }
 </style>

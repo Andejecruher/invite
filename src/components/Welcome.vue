@@ -13,7 +13,7 @@
           </div>
         </v-col>
         <v-col cols="12" xs="12" md="7">
-          <h1 class="invitation-title">¡Te invitamos a nuestra Boda!</h1>
+          <h1 class="invitation-title">¡Nos casamos!</h1>
           <p class="invitation-message">
             Es un honor para nosotros invitarte a compartir este día tan
             especial en nuestras vidas. Estamos emocionados de celebrar nuestra
@@ -185,7 +185,7 @@ export default {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 425px) {
   .story-img .story-img-2 {
     width: 20% !important;
     height: 120px;
@@ -196,7 +196,7 @@ export default {
   .invitation-title {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
-    font-size: 22px;
+    font-size: 30px;
     color: #bd945a;
     margin-bottom: 10px;
   }
@@ -209,16 +209,16 @@ export default {
   }
   .invitation-message {
     text-align: left;
-    font-size: 12px;
+    font-size: 16px;
     color: #333;
     margin-bottom: 15px;
   }
 
   .invitation-names {
-    font-size: 16px;
+    font-size: 22px;
   }
   .invitation-names-p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .story-img{

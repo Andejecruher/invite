@@ -69,6 +69,7 @@ export default {
 .full-height {
   height: auto;
   width: 100%;
+  margin-bottom: 5%;
 }
 .confirm-info {
   padding: 20px;
@@ -103,15 +104,40 @@ export default {
   color: #fff;
 }
 
-.container{
+.container {
   display: flex;
   align-items: center;
 }
 
 .v-label.v-field-label--floating {
-    font-size: 18px !important;
-    font-family: "Cormorant Garamond", serif;
-    color: #000;
+  font-size: 18px !important;
+  font-family: "Cormorant Garamond", serif;
+  color: #000;
+}
 
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 30px;
+  }
+  .title-form {
+    font-size: 30px;
+  }
+  .message {
+    font-size: 18px;
+  }
+  .form {
+    font-size: 18px;
+  }
+  .v-label.v-field-label--floating {
+    font-size: 18px !important;
+  }
+  .confirm-info {
+    padding: 0px;
+  }
+  .full-height {
+    margin-bottom: 20%;
+    margin-right: 0px;
+    margin-top: 5%;
+  }
 }
 </style>

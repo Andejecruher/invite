@@ -4,8 +4,7 @@
       <v-layout v-if="layout">
         <v-navigation-drawer
           v-model="clicked"
-          :permanent="$vuetify.display.mobile"
-          :temporary="$vuetify.display.mobile"
+          temporary
           location="left"
           :width="drawerWidth"
           class="drawer-menu"

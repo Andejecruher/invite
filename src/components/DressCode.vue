@@ -74,34 +74,29 @@ export default {
 }
 
 .drees-code-container {
+  margin-top: 15%;
   margin-bottom: 15%;
 }
 
-.drees-reception-container {
-    margin-top: 10%;
-  }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .title {
   font-size: 30px;
 }
 .subtitle {
-  font-size: 14px;
+  font-size: 16px;
   margin-top: 10px;
-  margin-bottom: 5%;
+  margin-bottom: 20%;
 }
 .type {
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Cormorant Garamond", serif;
   text-align: center;
 }
 
 .drees-code-container {
-  margin-bottom: 20%;
+  margin-top: 15%;
+  margin-bottom: 25%;
 }
-
-.drees-reception-container {
-    margin-top: 15%;
-  }
 }
 </style>
