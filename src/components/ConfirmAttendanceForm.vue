@@ -1,11 +1,21 @@
 <template>
+  <v-parallax :src="urlImg">
   <v-container class="full-height">
     <v-row class="full-height" justify="center" align="center">
       <v-col cols="12" xs="12" md="6">
         <div class="confirm-info">
           <h2 class="title">Confirmar Asistencia</h2>
           <p class="message">
-            Favor de confirmar tu asistencia lo antes posible.
+            FAVOR DE CONFIRMAR TU ASISTENCIA LO ANTES POSIBLE.
+          </p>
+        </div>
+        <div class="confirm-info">
+          <h2 class="title">Consideración</h2>
+          <p class="message">
+            LA CANTIDAD DE PASES OTORGADA ESTA CONTADA MINUCIOSAMENTE PORFAVOR SER TAN AMABLE DE RESPETARLA PARA EVITAR FUTURAS CONTRADICCIONES
+          </p>
+          <p class="message">
+            SOLO ADULTOS. (NO NIÑOS)
           </p>
         </div>
       </v-col>
@@ -36,9 +46,11 @@
       </v-col>
     </v-row>
   </v-container>
+</v-parallax>
 </template>
 
 <script>
+import Banner from "../assets/372.jpg";
 export default {
   name: "ConfirmAttendanceForm",
   data() {
@@ -48,6 +60,7 @@ export default {
       numberOfPeople: 1,
       peopleOptions: [1, 2, 3, 4, 5],
       sendGreetings: false,
+      urlImg: Banner,
     };
   },
   methods: {
@@ -67,7 +80,7 @@ export default {
 
 <style scoped>
 .full-height {
-  height: auto;
+  height: 100vh;
   width: 100%;
   margin-bottom: 5%;
 }

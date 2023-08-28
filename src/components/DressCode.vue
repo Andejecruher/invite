@@ -1,4 +1,5 @@
 <template>
+  <v-parallax :src="urlImg">
   <div class="drees-code">
     <v-container class="drees-code-container drees-reception-container">
       <h2 class="title">Código de Vestimenta</h2>
@@ -20,20 +21,24 @@
               src="https://invites-now.com/wp-content/uploads/2022/07/Dress_3_black-1.png"
             ></v-img>
             <p class="type">Vestido Largo</p>
+            <p class="type">No colores</p>
           </div>
         </v-col>
       </v-row>
     </v-container>
   </div>
+</v-parallax>
 </template>
 
 <script>
+import Banner from "../assets/372.jpg";
 export default {
   name: "DressCodeView",
   data() {
     return {
       whiteTraje: 150,
       whiteVestido: 120,
+      urlImg: Banner,
     };
   },
   mounted() {
@@ -50,7 +55,7 @@ export default {
   position: relative;
   font-family: "Cormorant Garamond", serif;
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +69,7 @@ export default {
   font-family: "Cormorant Garamond", serif;
   font-size: 30px;
   margin-top: 10px;
-  color: gray;
+  color: white;
   margin-bottom: 5%;
 }
 .type {

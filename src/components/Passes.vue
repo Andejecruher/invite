@@ -1,17 +1,17 @@
 <template>
-  <v-container id="story" class="welcome-container" fluid>
-    <v-row class="story">
-      <v-col cols="12" xs="12" md="5">
+  <v-container class="welcome-container" fluid>
+    <v-row class="story" justify="center" align="center">
+      <v-col cols="12" xs="12" md="5" justify="center" align="center">
         <div
           class="story-img animate-box fadeInLeft animated"
           data-animate-effect="fadeInLeft"
         >
           <div class="img">
-            <img src="../assets/pases.jpg" class="img-fluid" alt="" />
+            <img src="../assets/banner3.jpg" class="img-fluid" alt="" />
           </div>
         </div>
       </v-col>
-      <v-col cols="12" xs="12" md="7">
+      <v-col cols="12" xs="12" md="7" justify="center" align="center">
         <h1 class="invitation-title">¡Fam. Escarpulli Hernández !</h1>
         <p class="invitation-message text-center"># PASES 3</p>
         <br />
@@ -30,6 +30,11 @@ export default {
 </script>
 
 <style scoped>
+#story{
+  margin-top: 10%;
+  margin-bottom: 10%;
+  
+}
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -42,6 +47,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .welcome-image {
@@ -65,7 +72,6 @@ export default {
 }
 
 .invitation-title {
-  margin-top: 25%;
   font-family: "Alex Brush", cursive;
   font-size: 70px;
   color: #bd945a;

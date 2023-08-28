@@ -1,10 +1,10 @@
 <template>
   <div class="ceremony-reception">
     <v-container class="ceremony-reception-container">
-      <v-row>
-        <v-col cols="6" class="text-center">
+      <v-row> 
+        <v-col cols="12" md="6" xs="12" class="text-center">
           <svg-icon type="mdi" :path="ceremony" size="60" />
-          <h1 class="title">Ceremonia</h1>
+          <h1 class="title">Civil</h1>
           <v-divider :thickness="grosor" class="divider"></v-divider>
           <p class="info">
             Jueves 21 de Diciembre del 2023 <br />
@@ -19,7 +19,7 @@
             >Ver Mapa</v-btn
           >
         </v-col>
-        <v-col cols="6">
+        <v-col cols="12" md="6" xs="12">
           <svg-icon type="mdi" :path="reception" size="60" />
           <h1 class="title">Recepción</h1>
           <v-divider :thickness="grosor" class="divider"></v-divider>

@@ -1,57 +1,198 @@
 <template>
-  <div class="loader-container">
-    <div class="heart">
-      <div class="heart-inner"></div>
+  <div class="full-screen">
+    <img
+      src="../assets/loader.jpg"
+      alt="Background"
+      class="background-image"
+    />
+    <div class="overlay">
+      <transition name="name" mode="in-out">
+        <h1 id="name" v-if="animation">! Nos casamos !</h1>
+      </transition>
     </div>
+    <transition name="heart">
+      <div class="heart">
+        <svg-icon type="mdi" :path="heart" size="60"/>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
+import SvgIcon from '@jamescoyle/vue-icon';
+import { mdiHeartPulse } from '@mdi/js';
 export default {
   name: "LoaderHeart",
+  components: {
+    SvgIcon,
+  },
+  data() {
+    return {
+      heart: mdiHeartPulse,
+      countdown: 10, // Cambia este valor al tiempo deseado en segundos
+      showHeart: true,
+      animation: false,
+    };
+  },
+  mounted() {
+    this.startCountdown();
+    this.startAnimation();
+  },
+  methods: {
+    startAnimation() {
+      this.animation = true;
+    },
+    startCountdown() {
+      let timer = setInterval(() => {
+        if (this.countdown > 0) {
+          this.countdown--;
+        } else {
+          clearInterval(timer);
+        }
+      }, 1000);
+    },
+  },
 };
 </script>
 
 <style scoped>
-.loader-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+
+
+#name {
+  display: block;
+  font-size: 75px;
+  color: white;
+  font-family: "Alex Brush", cursive;
+  font-weight: 500;
+  display: block;
+  margin-top: 0px;
+  text-align: center;
+  line-height: 1.5em;
+}
+.full-screen {
+  position: relative;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
-.heart{
-  --size: 35px;
-  --color: #bd945a;
-  transform:rotate(45deg);
-  animation:beat 0.5s infinite alternate ease-in-out;
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
+
+.overlay {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #bd945a;
+}
+
+.countdown {
+  width: 100%;
+}
+
+.heart {
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #bd945a;
+  animation: beat 1s infinite;
+}
+
+.name-enter-active {
+  animation: heart-bounce 1s infinite;
+}
+.name-leave-active {
+  animation: heart-bounce 1s infinite;
+}
+
+.name-enter-from {
+  opacity: 1;
+}
+.name-enter-to {
+  opacity: 1;
+}
+
 @keyframes beat{
   to{
-    transform: rotate(45deg) scale(1.15);
+    transform: scale(1.15);
+  }
+}
+@keyframes heart-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-80px);
+  }
+}
+@media (max-width:1024px){
+  .overlay{
+    top: -30% !important;
+    left: 0% !important;
+  }
+  .heart{
+    top: 40% !important;
+    left: 0% !important;
   }
 }
 
-.heart,
-.heart::before,
-.heart::after{
-    width: var(--size);
-    height: var(--size);
-    background:var(--color);
+@media (max-width:425px){
+  #name{
+    font-size: 55px;
+  }
+  .overlay{
+    top: -30% !important;
+    left: 0px !important;
+  }
+  .heart{
+    top: 40% !important;
+    left: 0px !important;
+  }
 }
-.heart::before,
-.heart::after{
-  content:'';
-  display: block;
-  border-radius:50%;
+@media (max-width:375px){
+  #name{
+    font-size: 45px;
+  }
+  .overlay{
+    top: -30% !important;
+    left: 0px !important;
+  }
+  .heart{
+    top: 40% !important;
+    left: 0px !important;
+  }
 }
-.heart::before{
-  margin-top: calc(var(--size)*-.5);
- 
-}
-.heart::after{
-  margin-top: calc(var(--size)* -0.5);
-  margin-left: calc(var(--size)* -0.5);
+
+@media (max-width:320px){
+  #name{
+    font-size: 45px;
+  }
+  .overlay{
+    top: -30% !important;
+    left: 0px !important;
+  }
+  .heart{
+    top: 40% !important;
+    left: 0px !important;
+  }
 }
 
 </style>

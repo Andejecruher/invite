@@ -1,36 +1,31 @@
 <template>
-  <div class="full-screen">
-    <img
-      src="../assets/banner6.jpg"
-      alt="Background"
-      class="background-image"
-    />
-    <div class="overlay">
-      <transition name="name" mode="in-out">
-        <h1 id="name" v-if="animation">Valeria & Orlando</h1>
-      </transition>
-      <div class="countdown">
+  <v-parallax :src="urlImg">
+    <div class="full-screen">
+      <div class="overlay">
         <transition name="name" mode="in-out">
-          <CountReverse v-if="animation" />
+          <div class="text-center">
+            <h1 id="name" v-if="animation">Valeria & Orlando</h1>
+            <p class="date">21.12.2023</p>
+          </div>   
         </transition>
       </div>
+      <transition name="heart">
+        <div class="heart">
+          <svg-icon type="mdi" :path="heart" size="40" />
+        </div>
+      </transition>
     </div>
-    <transition name="heart">
-      <div class="heart">
-        <svg-icon type="mdi" :path="heart" size="40"/>
-      </div>
-    </transition>
-  </div>
+  </v-parallax>
 </template>
 
 <script>
-import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiHeartPulse } from '@mdi/js';
-import CountReverse from "./CountReverse.vue";
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiHeartPulse } from "@mdi/js";
+import Banner from "../assets/banner6.jpg";
+
 export default {
   name: "FullScreen",
   components: {
-    CountReverse,
     SvgIcon,
   },
   data() {
@@ -39,6 +34,7 @@ export default {
       countdown: 10, // Cambia este valor al tiempo deseado en segundos
       showHeart: true,
       animation: false,
+      urlImg: Banner,
     };
   },
   mounted() {
@@ -74,6 +70,17 @@ export default {
   text-align: center;
   line-height: 1.5em;
 }
+
+.date{
+  font-size: 18px;
+  font-family: monospace, sans-serif;
+  color: white;
+  font-weight: 500;
+  display: block;
+  margin-top: 0px;
+  text-align: center;
+  line-height: 1.5em;
+}
 .full-screen {
   position: relative;
   width: 100vw;
@@ -86,10 +93,9 @@ export default {
   height: 100%;
   object-fit: cover;
 }
-
 .overlay {
   position: absolute;
-  top: -30%;
+  top: -15%;
   left: -15%;
   width: 100%;
   height: 100%;
@@ -142,56 +148,55 @@ export default {
     transform: translateY(-20px);
   }
 }
-@media (max-width:1024px){
-  .overlay{
-    top: -30% !important;
+@media (max-width: 1024px) {
+  .overlay {
+    top: -20% !important;
     left: 0% !important;
   }
-  .heart{
+  .heart {
     top: 40% !important;
     left: 0% !important;
   }
 }
 
-@media (max-width:425px){
-  #name{
+@media (max-width: 425px) {
+  #name {
     font-size: 55px;
   }
-  .overlay{
-    top: -30% !important;
+  .overlay {
+    top: -20% !important;
     left: 0px !important;
   }
-  .heart{
+  .heart {
     top: 40% !important;
     left: 0px !important;
   }
 }
-@media (max-width:375px){
-  #name{
+@media (max-width: 375px) {
+  #name {
     font-size: 45px;
   }
-  .overlay{
-    top: -30% !important;
+  .overlay {
+    top: -20% !important;
     left: 0px !important;
   }
-  .heart{
+  .heart {
     top: 40% !important;
     left: 0px !important;
   }
 }
 
-@media (max-width:320px){
-  #name{
+@media (max-width: 320px) {
+  #name {
     font-size: 45px;
   }
-  .overlay{
-    top: -30% !important;
+  .overlay {
+    top: -15% !important;
     left: 0px !important;
   }
-  .heart{
+  .heart {
     top: 40% !important;
     left: 0px !important;
   }
 }
-
 </style>

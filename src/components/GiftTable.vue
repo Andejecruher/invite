@@ -1,8 +1,10 @@
 <template>
+  <v-parallax :src="banner">
   <v-container id="story" class="welcome-container" fluid justify="center" align="center">
     <v-row class="story" justify="center" align="center">
       <v-col xs="12" md="12" class="mesa" justify="center" align="center">
-        <h1 class="invitation-title">¡Mesa de regalos!</h1>
+        <v-card class="p-10" elevation="3" color="rgba(0, 0, 0, 0.5)" width="100%">
+          <h1 class="invitation-title">¡Mesa de regalos!</h1>
         <p class="invitation-message">
           "La presencia de ustedes tiene un valor incalculable para nosotros. Si
           bien su compañía es el regalo más preciado, si desean hacernos un
@@ -11,14 +13,23 @@
           podrán depositarlo junto a sus felicitaciones. Agradecemos
           profundamente su consideración."
         </p>
+        </v-card>
+        
       </v-col>
     </v-row>
   </v-container>
+</v-parallax>
 </template>
 
 <script>
+import Banner from "../assets/giftable.jpg"
 export default {
   name: "GiftTableView",
+  data() {
+    return {
+      banner: Banner,
+    };
+  },
 };
 </script>
 
@@ -54,7 +65,7 @@ export default {
 
 .welcome-message {
   font-size: 18px;
-  color: #333;
+  color: #FFF;
 }
 
 .invitation-title {
@@ -72,9 +83,10 @@ export default {
 }
 .invitation-message {
   text-align: left;
-  font-size: 22px;
-  color: #333;
+  font-size: 30px;
+  color: #FFF;
   margin-bottom: 15px;
+  padding: 60px;
 }
 /* ======= Our Story style ======= */
 .story .story-img {

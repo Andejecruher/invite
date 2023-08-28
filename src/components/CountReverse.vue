@@ -1,33 +1,42 @@
 <template>
-  <v-card class="countdown-card" elevation="0">
-    <v-card-text>
-      <v-row>
-        <v-col cols="3">
-          <div class="number">{{ timelineEvents[0].timeRemaining }}</div>
-          <p>Dias</p>
-        </v-col>
-        <v-col cols="3">
-          <div class="number">{{ timelineEvents[1].timeRemaining }}</div>
-          <p>Horas</p>
-        </v-col>
-        <v-col cols="3">
-          <div class="number">{{ timelineEvents[2].timeRemaining }}</div>
-          <p>Minutos</p>
-        </v-col>
-        <v-col cols="3">
-          <div class="number">{{ timelineEvents[3].timeRemaining }}</div>
-          <p>Segundos</p>
-        </v-col>
-      </v-row>
-    </v-card-text>
-  </v-card>
+  <v-parallax :src="urlImg">
+  <div class="full-screen">
+    <div class="overlay">
+      <v-card class="countdown-card" elevation="5" color="rgba(0, 0, 0, 0.4)" width="50%">
+        <v-card-title><h1 class="titule">Solo Faltan !</h1></v-card-title>
+        <v-card-text>
+          <v-row justify="center" align="center">
+            <v-col cols="3">
+              <div class="number">{{ timelineEvents[0].timeRemaining }}</div>
+              <p class="number-name">Dias</p>
+            </v-col>
+            <v-col cols="3">
+              <div class="number">{{ timelineEvents[1].timeRemaining }}</div>
+              <p class="number-name">Horas</p>
+            </v-col>
+            <v-col cols="3">
+              <div class="number">{{ timelineEvents[2].timeRemaining }}</div>
+              <p class="number-name">Minutos</p>
+            </v-col>
+            <v-col cols="3">
+              <div class="number">{{ timelineEvents[3].timeRemaining }}</div>
+              <p class="number-name">Segundos</p>
+            </v-col>
+          </v-row>
+        </v-card-text>
+      </v-card>
+    </div>
+  </div>
+</v-parallax>
 </template>
 
 <script>
+import Banner from "../assets/counter.jpg";
 export default {
   name: "CountReverse",
   data() {
     return {
+      urlImg: Banner,
       targetDate: new Date("2023-12-21T20:45:00"), // Cambia esta fecha a la que desees
       timelineEvents: [
         { icon: "mdi-calendar-clock", text: "Días", timeRemaining: 0 },
@@ -79,21 +88,45 @@ export default {
 </script>
 
 <style scoped>
+.full-screen {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 0%;
+  left: -7%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #bd945a;
+}
 .countdown-card {
   font-family: monospace, sans-serif;
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
   padding: 20px;
   color: white; /* Cambia el color del texto si es necesario */
+  background-color: rgba(0, 0, 0, 0.5); /* Cambia el color del fondo si es necesario */
 }
 
 .number {
-  font-size: 50px;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-family: monospace, serif;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
+.number-name{
+  font-family: "Cormorant Garamond", serif;
+  font-size: 36px;
+  font-weight: bold;
+}
 .v-card-title {
   color: #bd945a;
   font-family: "Alex Brush", cursive;
@@ -107,12 +140,13 @@ export default {
   min-width: 0;
   overflow-wrap: normal;
   overflow: hidden;
-  padding: 0.5rem 1rem;
+  padding: 35px;
   text-overflow: ellipsis;
   text-transform: none;
   white-space: nowrap;
   word-break: normal;
   word-wrap: break-word;
+  margin-bottom: 10px;
 }
 
 .v-card-text {

@@ -4,7 +4,7 @@
       <v-layout v-if="layout">
         <v-navigation-drawer
           v-model="clicked"
-          temporary
+          :temporary="$vuetify.display.mobile"
           location="left"
           :width="drawerWidth"
           class="drawer-menu"
@@ -42,7 +42,7 @@
             ></v-list-item>
             <v-list-item
               class="hover-underline"
-              title="Ceremonia y Recepción"
+              title="Civil y Recepción"
               value="ceremonia"
               @click="clickMenu('CeremonyReceptionView')"
             ></v-list-item>
@@ -119,7 +119,7 @@ export default {
       setTimeout(() => {
         this.layout = true;
         this.loading = false;
-      }, 2000);
+      }, 5000);
     },
     clickMenu(name) {
       if(this.$vuetify.display.mobile) {
