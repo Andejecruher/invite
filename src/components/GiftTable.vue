@@ -171,7 +171,7 @@ export default {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .invitation-title {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
@@ -180,9 +180,10 @@ export default {
     margin-bottom: 20px;
   }
   .invitation-message {
+    padding: 25px;
     text-align: left;
     font-size: 18px;
-    color: #333;
+    color: #fff;
     margin-bottom: 15px;
   }
   .invitation-names {
@@ -202,7 +203,46 @@ export default {
   }
 
   .mesa{
-    padding: 20px 20px 20px;
+    padding: 5px 5px 5px;
+    margin-top: 15%;
+    margin-bottom: 25%;
+  }
+  
+}
+
+@media screen and (max-width: 425px) {
+  .invitation-title {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    font-size: 30px;
+    color: #bd945a;
+    margin-bottom: 20px;
+  }
+  .invitation-message {
+    padding: 25px;
+    text-align: left;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+  }
+  .invitation-names {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    color: #bd945a;
+    margin-bottom: 26px;
+  }
+  .text-center {
+    font-size: 18px;
+    text-align: center;
+  }
+  .story-img {
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 20%;
+  }
+
+  .mesa{
+    padding: 5px 5px 5px;
     margin-top: 15%;
     margin-bottom: 25%;
   }

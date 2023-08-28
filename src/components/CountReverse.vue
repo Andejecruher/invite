@@ -1,33 +1,38 @@
 <template>
   <v-parallax :src="urlImg">
-  <div class="full-screen">
-    <div class="overlay">
-      <v-card class="countdown-card" elevation="5" color="rgba(0, 0, 0, 0.4)" width="50%">
-        <v-card-title><h1 class="titule">Solo Faltan !</h1></v-card-title>
-        <v-card-text>
-          <v-row justify="center" align="center">
-            <v-col cols="3">
-              <div class="number">{{ timelineEvents[0].timeRemaining }}</div>
-              <p class="number-name">Dias</p>
-            </v-col>
-            <v-col cols="3">
-              <div class="number">{{ timelineEvents[1].timeRemaining }}</div>
-              <p class="number-name">Horas</p>
-            </v-col>
-            <v-col cols="3">
-              <div class="number">{{ timelineEvents[2].timeRemaining }}</div>
-              <p class="number-name">Minutos</p>
-            </v-col>
-            <v-col cols="3">
-              <div class="number">{{ timelineEvents[3].timeRemaining }}</div>
-              <p class="number-name">Segundos</p>
-            </v-col>
-          </v-row>
-        </v-card-text>
-      </v-card>
+    <div class="full-screen">
+      <div class="overlay">
+        <v-card
+          class="countdown-card"
+          elevation="5"
+          color="rgba(0, 0, 0, 0.4)"
+          :width="widthCount"
+        >
+          <v-card-title><h1 class="titule">Solo Faltan !</h1></v-card-title>
+          <v-card-text>
+            <v-row justify="center" align="center">
+              <v-col cols="3">
+                <div class="number">{{ timelineEvents[0].timeRemaining }}</div>
+                <p class="number-name">Dias</p>
+              </v-col>
+              <v-col cols="3">
+                <div class="number">{{ timelineEvents[1].timeRemaining }}</div>
+                <p class="number-name">Horas</p>
+              </v-col>
+              <v-col cols="3">
+                <div class="number">{{ timelineEvents[2].timeRemaining }}</div>
+                <p class="number-name">Minutos</p>
+              </v-col>
+              <v-col cols="3">
+                <div class="number">{{ timelineEvents[3].timeRemaining }}</div>
+                <p class="number-name">Segundos</p>
+              </v-col>
+            </v-row>
+          </v-card-text>
+        </v-card>
+      </div>
     </div>
-  </div>
-</v-parallax>
+  </v-parallax>
 </template>
 
 <script>
@@ -45,10 +50,14 @@ export default {
         { icon: "mdi-clock-start", text: "Segundos", timeRemaining: 0 },
       ],
       countdownInterval: null,
+      widthCount: "50%",
     };
   },
   mounted() {
     this.startCountdown();
+    if (this.$vuetify.display.mobile) {
+      this.widthCount = "90%";
+    }
   },
   beforeUnmount() {
     clearInterval(this.countdownInterval);
@@ -113,7 +122,12 @@ export default {
   text-align: center;
   padding: 20px;
   color: white; /* Cambia el color del texto si es necesario */
-  background-color: rgba(0, 0, 0, 0.5); /* Cambia el color del fondo si es necesario */
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Cambia el color del fondo si es necesario */
 }
 
 .number {
@@ -122,7 +136,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.number-name{
+.number-name {
   font-family: "Cormorant Garamond", serif;
   font-size: 36px;
   font-weight: bold;
@@ -182,12 +196,45 @@ export default {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
   .number {
-    font-size: 22px;
+    font-size: 16px;
+  }
+  .number-name{
+    font-size: 11px;
   }
   .v-card-text {
-    font-size: 9px;
+    font-size: 11px;
+    padding: 0;
+  }
+  .overlay {
+    left: 0;
+  }
+
+  .v-card-title{
+    font-size: 1em;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 320px) {
+  .number {
+    font-size: 16px;
+  }
+  .number-name{
+    font-size: 11px;
+  }
+  .v-card-text {
+    font-size: 11px;
+    padding: 0;
+  }
+  .overlay {
+    left: 0;
+  }
+
+  .v-card-title{
+    font-size: 1em;
+    padding: 10px;
   }
 }
 </style>

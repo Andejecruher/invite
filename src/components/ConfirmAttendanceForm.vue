@@ -128,7 +128,7 @@ export default {
   color: #000;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
   .title {
     font-size: 30px;
   }
@@ -149,6 +149,84 @@ export default {
   }
   .full-height {
     margin-bottom: 20%;
+    margin-right: 0px;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 30px;
+  }
+  .title-form {
+    font-size: 30px;
+  }
+  .message {
+    font-size: 12px;
+  }
+  .form {
+    font-size: 12px;
+  }
+  .v-label.v-field-label--floating {
+    font-size: 18px !important;
+  }
+  .confirm-info {
+    padding: 0px;
+  }
+  .full-height {
+    margin-bottom: 20%;
+    margin-right: 0px;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .title {
+    font-size: 30px;
+  }
+  .title-form {
+    font-size: 30px;
+  }
+  .message {
+    font-size: 12px;
+  }
+  .form {
+    font-size: 18px;
+  }
+  .v-label.v-field-label--floating {
+    font-size: 18px !important;
+  }
+  .confirm-info {
+    padding: 0px;
+  }
+  .full-height {
+    margin-bottom: 30%;
+    margin-right: 0px;
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .title {
+    font-size: 30px;
+  }
+  .title-form {
+    font-size: 30px;
+  }
+  .message {
+    font-size: 12px;
+  }
+  .form {
+    font-size: 18px;
+  }
+  .v-label.v-field-label--floating {
+    font-size: 18px !important;
+  }
+  .confirm-info {
+    padding: 0px;
+  }
+  .full-height {
+    margin-bottom: 30%;
     margin-right: 0px;
     margin-top: 5%;
   }

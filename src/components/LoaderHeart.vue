@@ -78,6 +78,8 @@ export default {
 }
 
 .background-image {
+  background-size: cover;
+  background-position: center;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -172,12 +174,15 @@ export default {
     font-size: 45px;
   }
   .overlay{
-    top: -30% !important;
+    top: -10% !important;
     left: 0px !important;
   }
   .heart{
-    top: 40% !important;
+    top: 0% !important;
     left: 0px !important;
+  }
+  .background-image{
+    width: 130%;
   }
 }
 
@@ -186,12 +191,15 @@ export default {
     font-size: 45px;
   }
   .overlay{
-    top: -30% !important;
+    top: -10% !important;
     left: 0px !important;
   }
   .heart{
-    top: 40% !important;
+    top: 0% !important;
     left: 0px !important;
+  }
+  .background-image{
+    width: 130%;
   }
 }
 

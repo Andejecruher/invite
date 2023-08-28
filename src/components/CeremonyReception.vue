@@ -155,6 +155,17 @@ export default {
   align-items: center;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  .title {
+    font-size: 26px;
+  }
+  .info {
+    font-size: 18px;
+  }
+  .btn {
+    font-size: 16px;
+  }
+}
 
 @media (max-width: 425px) {
   .title {

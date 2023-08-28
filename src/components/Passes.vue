@@ -171,6 +171,36 @@ export default {
     top: 15px;
     right: 45px;
   }
+  .invitation-title {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    font-size: 30px;
+    color: #bd945a;
+    margin-bottom: 20px;
+  }
+  .invitation-message {
+    text-align: left;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  .invitation-names {
+    margin-top: 15%;
+    font-family: "Alex Brush", cursive;
+    color: #bd945a;
+    margin-bottom: 26px;
+  }
+  .text-center {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+  }
+  .story-img {
+    width: 100%;
+    margin-left: 0;
+    margin-top: -10%;
+  }
+
 }
 
 @media screen and (max-width: 425px) {
@@ -199,9 +229,9 @@ export default {
     font-weight: 400;
   }
   .story-img {
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 20%;
+    width: 100%;
+    margin-left: 0;
+    margin-top: -10%;
   }
 }
 </style>
