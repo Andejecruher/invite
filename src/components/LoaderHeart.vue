@@ -156,16 +156,16 @@ export default {
   }
 }
 
-@media (max-width:425px){
+@media (max-width: 768px){
   #name{
     font-size: 55px;
   }
   .overlay{
-    top: -30% !important;
+    top: -10% !important;
     left: 0px !important;
   }
   .heart{
-    top: 40% !important;
+    top: 0% !important;
     left: 0px !important;
   }
 }
@@ -174,7 +174,7 @@ export default {
     font-size: 45px;
   }
   .overlay{
-    top: -10% !important;
+    top: -5% !important;
     left: 0px !important;
   }
   .heart{
