@@ -24,9 +24,10 @@
           <h2 class="title-form">Asistirás a nuestra boda</h2>
           <v-divider></v-divider>
           <div class="container">
-            <v-checkbox :model-value="willAttend" label="Asistiré"></v-checkbox>
+            <v-checkbox :model-value="willAttend" :defaults-target="willAttend" label="Asistiré"></v-checkbox>
             <v-checkbox
               :model-value="wontAttend"
+              :defaults-target="wontAttend"
               label="No asistiré"
             ></v-checkbox>
           </div>
@@ -39,7 +40,7 @@
             v-model="greetings"
             label="Mensaje de felicitación"
           ></v-textarea>
-          <v-btn type="submit" color="#bd945a" class="btn-confirm"
+          <v-btn type="submit" color="#B59580" class="btn-confirm"
             >Confirmar Asistencia</v-btn
           >
         </v-form>
@@ -56,7 +57,7 @@ export default {
   data() {
     return {
       willAttend: true,
-      wontAttend: true,
+      wontAttend: false,
       numberOfPeople: 1,
       peopleOptions: [1, 2, 3, 4, 5],
       sendGreetings: false,
@@ -97,13 +98,13 @@ export default {
 .title {
   font-family: "Alex Brush", cursive;
   font-size: 35px;
-  color: #bd945a;
+  color: #B59580;
 }
 
 .title-form {
   font-family: "Alex Brush", cursive;
   font-size: 35px;
-  color: #bd945a;
+  color: #B59580;
 }
 
 .form {

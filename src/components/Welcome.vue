@@ -20,7 +20,7 @@
             unión y nos encantaría que te unas a nosotros en esta ocasión única.
           </p>
           <p class="invitation-message">
-            Tu presencia y cariño son lo más importante para nosotros, y
+            Tu presencia y cariño son lo más importante para nosotros y
             esperamos que puedas acompañarnos en este momento lleno de amor y
             felicidad.
           </p>
@@ -28,7 +28,7 @@
             Te agradecemos por ser parte de nuestras vidas y esperamos verte en
             este día tan especial.
           </p>
-          <v-row>
+          <v-row class="row-ainvite">
             <v-col cols="12" xs="12" md="6">
               <h1 class="invitation-names">Padres de Valeria</h1>
               <p class="invitation-names-p">SUSANA HERNANDES</p>
@@ -53,6 +53,9 @@ export default {
 </script>
 
 <style scoped>
+.row-ainvite {
+  margin-bottom: 5%;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -73,7 +76,7 @@ export default {
 
 .welcome-title {
   font-size: 24px;
-  color: #bd945a;
+  color: #B59580;
   margin-bottom: 10px;
 }
 
@@ -86,14 +89,14 @@ export default {
   margin-top: 15%;
   font-family: "Alex Brush", cursive;
   font-size: 70px;
-  color: #bd945a;
+  color: #B59580;
   margin-bottom: 20px;
 }
 
 .invitation-names {
   margin-top: 15%;
   font-family: "Alex Brush", cursive;
-  color: #bd945a;
+  color: #B59580;
   margin-bottom: 20px;
 }
 .invitation-message {
@@ -117,7 +120,6 @@ export default {
   right: 0;
   left: 45px;
   bottom: 0;
-  border: 10px solid #bd945a;
 }
 .story .story-img .img img {
   position: relative;
@@ -130,8 +132,6 @@ export default {
   top: -5%;
   bottom: -5%;
   left: 0;
-  background-image: url(../assets/dots.png);
-  background-repeat: repeat;
   z-index: -1;
 }
 
@@ -197,14 +197,14 @@ export default {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
     font-size: 30px;
-    color: #bd945a;
+    color: #B59580;
     margin-bottom: 10px;
   }
 
   .invitation-names {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
-    color: #bd945a;
+    color: #B59580;
     margin-bottom: 16px;
   }
   .invitation-message {

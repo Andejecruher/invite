@@ -21,7 +21,7 @@
               src="https://invites-now.com/wp-content/uploads/2022/07/Dress_3_black-1.png"
             ></v-img>
             <p class="type">Vestido Largo</p>
-            <p class="type">No colores</p>
+            <p class="type">No colores claros</p>
           </div>
         </v-col>
       </v-row>
@@ -63,13 +63,13 @@ export default {
 .title {
   font-family: "Alex Brush", cursive;
   font-size: 60px;
-  color: #bd945a;
+  color: #B59580;
 }
 .subtitle {
   font-family: "Cormorant Garamond", serif;
   font-size: 30px;
   margin-top: 10px;
-  color: white;
+  color: #000;
   margin-bottom: 5%;
 }
 .type {

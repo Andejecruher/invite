@@ -103,7 +103,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #bd945a;
+  color: #B59580;
 }
 
 .countdown {
@@ -121,7 +121,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #bd945a;
+  color: #B59580;
   animation: heart-bounce 1s infinite;
 }
 

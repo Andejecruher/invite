@@ -15,7 +15,7 @@
             Rumbo a, Carr. al Puente Viejo 89, <br />
             Ribera Cahuaré, Cahuaré, 29160 Chiapa de Corzo, Chis.
           </p>
-          <v-btn @click="openModal('Ceremonia')" color="#bd945a" class="btn"
+          <v-btn @click="openModal('Ceremonia')" color="#B59580" class="btn"
             >Ver Mapa</v-btn
           >
         </v-col>
@@ -32,7 +32,7 @@
             Rumbo a, Carr. al Puente Viejo 89, <br />
             Ribera Cahuaré, Cahuaré, 29160 Chiapa de Corzo, Chis.
           </p>
-          <v-btn @click="openModal('Recepción')" color="#bd945a" class="btn"
+          <v-btn @click="openModal('Recepción')" color="#B59580" class="btn"
             >Ver Mapa</v-btn
           >
         </v-col>
@@ -59,7 +59,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="#bd945a" @click="closeModal" variant="tonal"
+          <v-btn color="#B59580" @click="closeModal" variant="tonal"
             >Cerrar</v-btn
           >
         </v-card-actions>
@@ -70,15 +70,15 @@
 
 <script>
 import SvgIcon from "@jamescoyle/vue-icon";
-import { mdiChurch } from "@mdi/js";
 import { mdiGlassWine } from "@mdi/js";
+import { mdiRing } from "@mdi/js";
 
 export default {
   name: "CeremonyReceptionView",
   components: { SvgIcon },
   data() {
     return {
-      ceremony: mdiChurch,
+      ceremony: mdiRing,
       reception: mdiGlassWine,
       modalVisible: false,
       title: "",
@@ -123,14 +123,14 @@ export default {
   font-family: "Alex Brush", cursive;
   font-size: 60px;
   margin-top: 10px;
-  color: #bd945a;
+  color: #B59580;
 }
 .headline {
   font-weight: 600;
   font-family: "Alex Brush", cursive;
   font-size: 40px;
   margin-top: 10px;
-  color: #bd945a;
+  color: #B59580;
 }
 .divider {
   width: 50%;

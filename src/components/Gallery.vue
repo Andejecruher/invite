@@ -221,7 +221,7 @@ export default defineComponent({
   font-family: "Alex Brush", cursive;
   font-size: 60px;
   margin-top: 10px;
-  color: #bd945a;
+  color: #B59580;
 }
 
 .subtitle {

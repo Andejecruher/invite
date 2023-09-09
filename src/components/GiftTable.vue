@@ -59,7 +59,7 @@ export default {
 
 .welcome-title {
   font-size: 24px;
-  color: #bd945a;
+  color: #B59580;
   margin-bottom: 10px;
 }
 
@@ -70,20 +70,20 @@ export default {
 
 .invitation-title {
   font-family: "Alex Brush", cursive;
-  font-size: 70px;
-  color: #bd945a;
+  font-size: 55px;
+  color: #B59580;
   margin-bottom: 20px;
 }
 
 .invitation-names {
   margin-top: 15%;
   font-family: "Alex Brush", cursive;
-  color: #bd945a;
+  color: #B59580;
   margin-bottom: 20px;
 }
 .invitation-message {
   text-align: left;
-  font-size: 30px;
+  font-size: 22px;
   color: #FFF;
   margin-bottom: 15px;
   padding: 60px;
@@ -103,7 +103,7 @@ export default {
   right: 0;
   left: 45px;
   bottom: 0;
-  border: 10px solid #bd945a;
+  border: 10px solid #B59580;
 }
 .story .story-img .img img {
   position: relative;
@@ -176,7 +176,7 @@ export default {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
     font-size: 30px;
-    color: #bd945a;
+    color: #B59580;
     margin-bottom: 20px;
   }
   .invitation-message {
@@ -189,7 +189,7 @@ export default {
   .invitation-names {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
-    color: #bd945a;
+    color: #B59580;
     margin-bottom: 26px;
   }
   .text-center {
@@ -215,7 +215,7 @@ export default {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
     font-size: 30px;
-    color: #bd945a;
+    color: #B59580;
     margin-bottom: 20px;
   }
   .invitation-message {
@@ -228,7 +228,7 @@ export default {
   .invitation-names {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
-    color: #bd945a;
+    color: #B59580;
     margin-bottom: 26px;
   }
   .text-center {

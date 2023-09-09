@@ -159,7 +159,7 @@ export default {
 .name {
   display: block;
   font-size: 35px;
-  color: #bd945a;
+  color: #B59580;
   font-family: "Alex Brush", cursive;
   font-weight: 400;
   display: block;

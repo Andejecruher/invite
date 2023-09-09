@@ -106,14 +106,14 @@ export default {
 .overlay {
   position: absolute;
   top: 0%;
-  left: -7%;
+  left: -12%;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #bd945a;
+  color: #B59580;
 }
 .countdown-card {
   font-family: monospace, sans-serif;
@@ -132,21 +132,21 @@ export default {
 
 .number {
   font-family: monospace, serif;
-  font-size: 36px;
+  font-size: 26px;
   margin-bottom: 10px;
 }
 
 .number-name {
   font-family: "Cormorant Garamond", serif;
-  font-size: 36px;
+  font-size: 22px;
   font-weight: bold;
 }
 .v-card-title {
-  color: #bd945a;
+  color: #B59580;
   font-family: "Alex Brush", cursive;
   display: block;
   flex: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   -webkit-hyphens: auto;
   hyphens: auto;

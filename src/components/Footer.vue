@@ -32,7 +32,7 @@
 .title {
   font-family: monospace, cursive;
   font-size: 16px;
-  color: #bd945a;
+  color: #B59580;
 }
   </style>
   

@@ -1,7 +1,7 @@
 <template>
   <div class="full-screen">
     <img
-      src="../assets/loader.jpg"
+      :src="path"
       alt="Background"
       class="background-image"
     />
@@ -21,6 +21,9 @@
 <script>
 import SvgIcon from '@jamescoyle/vue-icon';
 import { mdiHeartPulse } from '@mdi/js';
+import imgDesktop from '../assets/loader.jpg';
+import imgMobile from '../assets/loadermobile.jpeg';
+
 export default {
   name: "LoaderHeart",
   components: {
@@ -32,9 +35,11 @@ export default {
       countdown: 10, // Cambia este valor al tiempo deseado en segundos
       showHeart: true,
       animation: false,
+      path: "",
     };
   },
   mounted() {
+    this.path = this.$vuetify.display.mobile ? imgMobile : imgDesktop;
     this.startCountdown();
     this.startAnimation();
   },
@@ -95,7 +100,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #bd945a;
+  color: #B59580;
 }
 
 .countdown {
@@ -113,7 +118,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #bd945a;
+  color: #B59580;
   animation: beat 1s infinite;
 }
 
