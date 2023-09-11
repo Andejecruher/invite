@@ -55,31 +55,30 @@
 import "vue3-carousel/dist/carousel.css";
 import { defineComponent } from "vue";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
-import Galery1 from "../assets/galery/072A3724.jpg";
-import Galery2 from "../assets/galery/072A3752.jpg";
-import Galery3 from "../assets/galery/072A3777.jpg";
-import Galery4 from "../assets/galery/072A3809.jpg";
-import Galery5 from "../assets/galery/072A3847.jpg";
-import Galery6 from "../assets/galery/072A3902.jpg";
-import Galery7 from "../assets/galery/072A3915.jpg";
-import Galery8 from "../assets/galery/072A3940.jpg";
-import Galery9 from "../assets/galery/072A3960.jpg";
-import Galery10 from "../assets/galery/072A3984.jpg";
-import Galery11 from "../assets/galery/072A4000.jpg";
-import Galery12 from "../assets/galery/1693161694464.jpg";
-import Galery13 from "../assets/galery/1693161694468.jpg";
-import Galery14 from "../assets/galery/1693161694472.jpg";
-import Galery15 from "../assets/galery/1693161694476.jpg";
-import Galery16 from "../assets/galery/1693161694480.jpg";
-import Galery17 from "../assets/galery/1693161694491.jpg";
-import Galery18 from "../assets/galery/1693161694498.jpg";
-import Galery19 from "../assets/galery/1693161694501.jpg";
-import Galery20 from "../assets/galery/1693161694548.jpg";
-import Galery21 from "../assets/galery/1693161694552.jpg";
-
+import Galery1 from "../assets/galery/1693182584061.jpg";
+import Galery2 from "../assets/galery/072A3567.jpg";
+import Galery3 from "../assets/galery/072A3583.jpg";
+import Galery4 from "../assets/galery/072A3612.jpg";
+import Galery5 from "../assets/galery/072A3695.jpg";
+import Galery6 from "../assets/galery/072A3741.jpg";
+import Galery7 from "../assets/galery/072A3750.jpg";
+import Galery8 from "../assets/galery/072A3795.jpg";
+import Galery9 from "../assets/galery/072A3830.jpg";
+import Galery10 from "../assets/galery/072A4067.jpg";
+import Galery11 from "../assets/galery/072A4117.jpg";
+import Galery12 from "../assets/galery/072A4154.jpg";
+import Galery13 from "../assets/galery/1693161694446.jpg";
+import Galery14 from "../assets/galery/1693161694455.jpg";
+import Galery15 from "../assets/galery/1693161694460.jpg";
+import Galery16 from "../assets/galery/1693161694483.jpg";
+import Galery17 from "../assets/galery/1693161694494.jpg";
+import Galery18 from "../assets/galery/1693161694507.jpg";
+import Galery19 from "../assets/galery/1693161694515.jpg";
+import Galery20 from "../assets/galery/1693161694530.jpg";
+import Galery21 from "../assets/galery/1693161694544.jpg";
 
 export default defineComponent({
-  name: "GalleryView",
+  name: "GalleryMobileView",
   components: {
     Carousel,
     Slide,
@@ -222,7 +221,7 @@ export default defineComponent({
   font-family: "Alex Brush", cursive;
   font-size: 60px;
   margin-top: 10px;
-  color: #B59580;
+  color: #b59580;
 }
 
 .subtitle {
@@ -234,12 +233,11 @@ export default defineComponent({
 }
 
 @media screen and (max-width: 768px) {
-  
   .title {
     font-family: "Alex Brush", cursive;
     font-size: 35px;
   }
-  
+
   .subtitle {
     font-family: "Cormorant Garamond", serif;
     font-size: 18px;
@@ -247,24 +245,20 @@ export default defineComponent({
   .v-container {
     width: 100%;
   }
-    
-  }
+}
 
 @media screen and (max-width: 320px) {
-  
-.title {
-  font-family: "Alex Brush", cursive;
-  font-size: 35px;
-}
+  .title {
+    font-family: "Alex Brush", cursive;
+    font-size: 35px;
+  }
 
-.subtitle {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 18px;
+  .subtitle {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 18px;
+  }
+  .v-container {
+    width: 100%;
+  }
 }
-.v-container {
-  width: 100%;
-}
-  
-}
-
 </style>

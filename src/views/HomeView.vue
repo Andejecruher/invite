@@ -6,7 +6,8 @@
   <DressCodeView id="DressCodeView"/>
   <PassesView id="PassesView"/>
   <GiftTableView id="GiftTableView" />
-  <GalleryView id="GalerryView" />
+  <GalleryMobileView id="GalerryView" v-show="$vuetify.display.mobile" />
+  <GalleryView id="GalerryView" v-show="!$vuetify.display.mobile"/>
   <ConfirmAttendanceForm id="ConfirmAttendanceForm" />
   <FooterView />
 </template>
@@ -21,6 +22,7 @@ import PassesView from "@/components/Passes.vue";
 import GiftTableView from "@/components/GiftTable.vue";
 import ConfirmAttendanceForm from "@/components/ConfirmAttendanceForm.vue";
 import GalleryView from "@/components/Gallery.vue";
+import GalleryMobileView from "@/components/GalleryMobile.vue"
 import FooterView from "@/components/Footer.vue";
 
 export default {
@@ -33,6 +35,7 @@ export default {
     DressCodeView,
     PassesView,
     GiftTableView,
+    GalleryMobileView,
     GalleryView,
     ConfirmAttendanceForm,
     FooterView,
