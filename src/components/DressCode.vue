@@ -85,15 +85,15 @@ export default {
 
 @media screen and (max-width: 768px) {
   .title {
-  font-size: 30px;
+  font-size: 35px;
 }
 .subtitle {
-  font-size: 16px;
+  font-size: 22px;
   margin-top: 10px;
   margin-bottom: 20%;
 }
 .type {
-  font-size: 16px;
+  font-size: 20px;
   font-family: "Cormorant Garamond", serif;
   text-align: center;
 }

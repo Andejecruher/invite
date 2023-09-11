@@ -37,6 +37,7 @@
 
 <script>
 import Banner from "../assets/counter.jpg";
+import Banner2 from "../assets/loader2.jpeg"
 export default {
   name: "CountReverse",
   data() {
@@ -58,6 +59,11 @@ export default {
     if (this.$vuetify.display.mobile) {
       this.widthCount = "90%";
     }
+
+    if(this.$vuetify.display.width < 768){
+      this.urlImg = Banner2;
+    }
+
   },
   beforeUnmount() {
     clearInterval(this.countdownInterval);
@@ -198,10 +204,10 @@ export default {
 
 @media (max-width: 768px) {
   .number {
-    font-size: 16px;
+    font-size: 22px;
   }
   .number-name{
-    font-size: 11px;
+    font-size: 18px;
   }
   .v-card-text {
     font-size: 11px;
@@ -212,7 +218,7 @@ export default {
   }
 
   .v-card-title{
-    font-size: 1em;
+    font-size: 1.3em;
     padding: 10px;
   }
 }

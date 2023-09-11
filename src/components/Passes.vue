@@ -2,13 +2,8 @@
   <v-container class="welcome-container" fluid>
     <v-row class="story" justify="center" align="center">
       <v-col cols="12" xs="12" md="5" justify="center" align="center">
-        <div
-          class="story-img animate-box fadeInLeft animated"
-          data-animate-effect="fadeInLeft"
-        >
-          <div class="img">
-            <img src="../assets/banner3.jpg" class="img-fluid" alt="" />
-          </div>
+        <div class="img" data-animate-effect="fadeInLeft">
+          <img src="../assets/banner3.jpg" class="img-fluid box-shadow" alt="" />
         </div>
       </v-col>
       <v-col cols="12" xs="12" md="7" justify="center" align="center">
@@ -30,10 +25,20 @@ export default {
 </script>
 
 <style scoped>
-#story{
+.img{
+  width: 450px;
+}
+
+.box-shadow {
+    background-color: rgba(255, 255, 255, 1);
+    color: #000;
+    border-radius: 0px;
+    box-shadow: 0px 100px 75px -30px rgba(155, 155, 155, 0.79);
+  }
+
+#story {
   margin-top: 10%;
   margin-bottom: 10%;
-  
 }
 .img-fluid {
   max-width: 100%;
@@ -62,7 +67,7 @@ export default {
 
 .welcome-title {
   font-size: 24px;
-  color: #B59580;
+  color: #b59580;
   margin-bottom: 10px;
 }
 
@@ -74,14 +79,14 @@ export default {
 .invitation-title {
   font-family: "Alex Brush", cursive;
   font-size: 70px;
-  color: #B59580;
+  color: #b59580;
   margin-bottom: 20px;
 }
 
 .invitation-names {
   margin-top: 15%;
   font-family: "Alex Brush", cursive;
-  color: #B59580;
+  color: #b59580;
   margin-bottom: 26px;
 }
 .invitation-message {
@@ -90,53 +95,6 @@ export default {
   color: #333;
   margin-bottom: 15px;
 }
-/* ======= Our Story style ======= */
-.story .story-img {
-  position: relative;
-}
-.story .story-img .img {
-  padding: 0 30px 30px 15px;
-  position: relative;
-}
-.story .story-img .img:before {
-  content: "";
-  position: absolute;
-  top: 30px;
-  right: 0;
-  left: 45px;
-  bottom: 0;
-}
-.story .story-img .img img {
-  position: relative;
-  z-index: 2;
-}
-.story .story-img:after {
-  content: "";
-  width: 90%;
-  position: absolute;
-  top: -5%;
-  bottom: -5%;
-  left: 0;
-  z-index: -1;
-}
-
-.story-img-2 {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.story-img .story-img-2 {
-  width: 30% !important;
-  height: 120px;
-  position: absolute;
-  top: 15px;
-  right: 45px;
-  z-index: 3;
-}
-
-/* story-wedding */
 
 .story-wedding {
   animation: rotation 12s infinite linear;
@@ -150,41 +108,25 @@ export default {
   }
 }
 
-@media screen and (max-width: 991px) {
-  .story-img .story-img-2 {
-    width: 30% !important;
-    height: 135px;
-    position: absolute;
-    top: 40px;
-    right: 45px;
-  }
-}
 
 @media screen and (max-width: 768px) {
-  .story-img .story-img-2 {
-    width: 40% !important;
-    height: 120px;
-    position: absolute;
-    top: 15px;
-    right: 45px;
-  }
   .invitation-title {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
     font-size: 30px;
-    color: #B59580;
+    color: #b59580;
     margin-bottom: 20px;
   }
   .invitation-message {
     text-align: left;
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     margin-bottom: 15px;
   }
   .invitation-names {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
-    color: #B59580;
+    color: #b59580;
     margin-bottom: 26px;
   }
   .text-center {
@@ -197,7 +139,6 @@ export default {
     margin-left: 0;
     margin-top: -10%;
   }
-
 }
 
 @media screen and (max-width: 425px) {
@@ -205,7 +146,7 @@ export default {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
     font-size: 30px;
-    color: #B59580;
+    color: #b59580;
     margin-bottom: 20px;
   }
   .invitation-message {
@@ -217,7 +158,7 @@ export default {
   .invitation-names {
     margin-top: 15%;
     font-family: "Alex Brush", cursive;
-    color: #B59580;
+    color: #b59580;
     margin-bottom: 26px;
   }
   .text-center {
@@ -225,10 +166,9 @@ export default {
     text-align: center;
     font-weight: 400;
   }
-  .story-img {
-    width: 100%;
-    margin-left: 0;
-    margin-top: -10%;
+
+  .img{
+    width: 320px;
   }
 }
 </style>

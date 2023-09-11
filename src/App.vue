@@ -24,6 +24,7 @@
               </transition>
               <p class="name">Valeria & Orlando</p>
               <p class="date">21.12.2023</p>
+
             </div>
           </template>
 
@@ -83,7 +84,8 @@
             </div>
           </template>
         </v-navigation-drawer>
-        <v-main>
+        <v-main v-scroll="onScroll">
+          <p>{{ scrollInvoked }}</p>
           <router-view />
         </v-main>
       </v-layout>
@@ -109,12 +111,17 @@ export default {
       loading: true,
       layout: false,
       drawerWidth: 425,
+      scrollInvoked: 0,
     };
   },
   mounted() {
     this.startCountdown();
   },
   methods: {
+    onScroll() {
+      console.log(this.scrollInvoked);
+      this.scrollInvoked++;
+    },
     startCountdown() {
       setTimeout(() => {
         this.layout = true;
@@ -122,14 +129,14 @@ export default {
       }, 5000);
     },
     clickMenu(name) {
-      if(this.$vuetify.display.mobile) {
+      if (this.$vuetify.display.mobile) {
         this.clicked = false;
       }
       if (name === "FullScreen") {
         scrollTo({
-        top: 0, // Cambia esta posición según tus necesidades
-        behavior: 'smooth'
-      });
+          top: 0, // Cambia esta posición según tus necesidades
+          behavior: "smooth",
+        });
       } else {
         const section = document.querySelector(`#${name}`);
         section.scrollIntoView({
@@ -159,7 +166,7 @@ export default {
 .name {
   display: block;
   font-size: 35px;
-  color: #B59580;
+  color: #b59580;
   font-family: "Alex Brush", cursive;
   font-weight: 400;
   display: block;

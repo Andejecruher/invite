@@ -13,5 +13,6 @@ const vuetify = createVuetify({
   components,
   directives,
 });
+const app = createApp(App);
 
-createApp(App).use(vuetify).use(router).mount('#app')
+app.use(vuetify).use(router).mount('#app')

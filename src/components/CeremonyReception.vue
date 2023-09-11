@@ -160,7 +160,7 @@ export default {
     font-size: 26px;
   }
   .info {
-    font-size: 18px;
+    font-size: 22px;
   }
   .btn {
     font-size: 16px;

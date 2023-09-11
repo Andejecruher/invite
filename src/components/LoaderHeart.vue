@@ -1,10 +1,6 @@
 <template>
   <div class="full-screen">
-    <img
-      :src="path"
-      alt="Background"
-      class="background-image"
-    />
+    <img :src="path" alt="Background" class="background-image" />
     <div class="overlay">
       <transition name="name" mode="in-out">
         <h1 id="name" v-if="animation">! Nos casamos !</h1>
@@ -12,17 +8,17 @@
     </div>
     <transition name="heart">
       <div class="heart">
-        <svg-icon type="mdi" :path="heart" size="60"/>
+        <svg-icon type="mdi" :path="heart" size="60" />
       </div>
     </transition>
   </div>
 </template>
 
 <script>
-import SvgIcon from '@jamescoyle/vue-icon';
-import { mdiHeartPulse } from '@mdi/js';
-import imgDesktop from '../assets/loader.jpg';
-import imgMobile from '../assets/loadermobile.jpeg';
+import SvgIcon from "@jamescoyle/vue-icon";
+import { mdiHeartPulse } from "@mdi/js";
+import imgDesktop from "../assets/loader.jpg";
+import imgMobile from "../assets/loadermobile.jpeg";
 
 export default {
   name: "LoaderHeart",
@@ -61,9 +57,6 @@ export default {
 </script>
 
 <style scoped>
-
-
-
 #name {
   display: block;
   font-size: 75px;
@@ -100,7 +93,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #B59580;
+  color: #b59580;
 }
 
 .countdown {
@@ -118,7 +111,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #B59580;
+  color: #b59580;
   animation: beat 1s infinite;
 }
 
@@ -136,8 +129,8 @@ export default {
   opacity: 1;
 }
 
-@keyframes beat{
-  to{
+@keyframes beat {
+  to {
     transform: scale(1.15);
   }
 }
@@ -150,62 +143,44 @@ export default {
     transform: translateY(-80px);
   }
 }
-@media (max-width:1024px){
-  .overlay{
+@media (max-width: 1024px) {
+  .overlay {
     top: -30% !important;
     left: 0% !important;
   }
-  .heart{
+  .heart {
     top: 40% !important;
     left: 0% !important;
   }
 }
 
-@media (max-width: 768px){
-  #name{
+@media (max-width: 768px) {
+  #name {
     font-size: 55px;
   }
-  .overlay{
-    top: -10% !important;
+
+  .heart {
+    top: 20% !important;
     left: 0px !important;
   }
-  .heart{
-    top: 0% !important;
+  .overlay {
+    top: 10% !important;
     left: 0px !important;
   }
 }
-@media (max-width:375px){
-  #name{
+@media (max-width: 425px) {
+
+}
+@media (max-width: 375px) {
+  #name {
     font-size: 45px;
   }
-  .overlay{
-    top: -5% !important;
-    left: 0px !important;
-  }
-  .heart{
-    top: 0% !important;
-    left: 0px !important;
-  }
-  .background-image{
-    width: 130%;
-  }
+
 }
 
-@media (max-width:320px){
-  #name{
+@media (max-width: 320px) {
+  #name {
     font-size: 45px;
   }
-  .overlay{
-    top: -10% !important;
-    left: 0px !important;
-  }
-  .heart{
-    top: 0% !important;
-    left: 0px !important;
-  }
-  .background-image{
-    width: 130%;
-  }
 }
-
 </style>
