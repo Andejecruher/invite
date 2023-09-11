@@ -1,10 +1,12 @@
 <template>
   <div class="welcome-container" >
-    <v-container id="story" v-scroll.self="handleScroll">
+    <v-container id="story">
       <v-row class="story">
         <v-col cols="12" xs="12" md="5">
-          <div class="img" data-animate-effect="fadeInLeft">
+          <div class="img"  data-animate-effect="fadeInLeft">
             <img
+            id="scroll-target"
+            v-scroll="handleScroll"
               src="../assets/story.jpg"
               class="img-fluid box-shadow"
               alt=""
@@ -48,18 +50,29 @@
 <script>
 export default {
   name: "WelcomeView",
-  data(){
+  data() {},
+  methods: {
+    handleScroll() {
+      // Obtenemos la posición del scroll actual
+      const scrollY = window.scrollY;
+      // Obtenemos la posición superior de la sección destacada
+      const seccionDestacada = document.getElementById('scroll-target');
+      const seccionTop = seccionDestacada.offsetTop;
+      // Calculamos la distancia desde la parte superior de la página
+      const distanciaDesdeLaParteSuperior = scrollY + window.innerHeight;
 
+      // Verificamos si la sección está en el viewport
+      if (distanciaDesdeLaParteSuperior >= seccionTop) {
+        console.log("🚀 ~ file: Welcome.vue:71 ~ handleScroll ~ distanciaDesdeLaParteSuperior:", distanciaDesdeLaParteSuperior)
+        // Si la sección está en el viewport, agregamos una clase CSS para animarla
+        seccionDestacada.classList.add('animate__fadeInTopRight');
+      } else {
+        console.log("asdasd");
+        // Si la sección no está en el viewport, eliminamos la clase CSS de animación
+        seccionDestacada.classList.remove('animate__fadeInTopRight');
+      }
+    },
   },
-  methods:{
-    handleScroll: function(evt, el) {
-    console.log("🚀 ~ file: Welcome.vue:53 ~ evt, el:", evt, el)
-    if (window.scrollY > 50) {
-      el.setAttribute("style", "opacity: 1; transform: translate3d(0, -10px, 0)")
-    }
-    return window.scrollY > 100;
-    }
-  }
 };
 </script>
 

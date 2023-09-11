@@ -157,6 +157,9 @@ export default {
     top: 40% !important;
     left: 0% !important;
   }
+  #name {
+    font-size: 55px;
+  }
 }
 
 @media (max-width: 425px) {

@@ -1,2 +1,0 @@
-// scrollDirective.js
-export default 

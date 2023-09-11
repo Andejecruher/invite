@@ -84,8 +84,7 @@
             </div>
           </template>
         </v-navigation-drawer>
-        <v-main v-scroll="onScroll">
-          <p>{{ scrollInvoked }}</p>
+        <v-main>
           <router-view />
         </v-main>
       </v-layout>
@@ -111,22 +110,17 @@ export default {
       loading: true,
       layout: false,
       drawerWidth: 425,
-      scrollInvoked: 0,
     };
   },
   mounted() {
     this.startCountdown();
   },
   methods: {
-    onScroll() {
-      console.log(this.scrollInvoked);
-      this.scrollInvoked++;
-    },
     startCountdown() {
       setTimeout(() => {
         this.layout = true;
         this.loading = false;
-      }, 5000);
+      }, 3000);
     },
     clickMenu(name) {
       if (this.$vuetify.display.mobile) {
