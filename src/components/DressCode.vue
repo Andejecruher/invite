@@ -1,12 +1,12 @@
 <template>
-  <v-parallax :src="urlImg">
-  <div class="drees-code">
-    <v-container class="drees-code-container drees-reception-container">
+  <v-parallax src="https://image.freepik.com/free-photo/grey-paper-texture_1253-25.jpg">
+  <div class="drees-code"  v-scroll="handleScroll">
+    <v-container class="drees-code-container drees-reception-container" id="scroll-dress">
       <h2 class="title">Código de Vestimenta</h2>
       <p class="subtitle">Formal</p>
       <v-row align="center" justify="center">
         <v-col xs="12" md="6" align="center" justify="center">
-          <div class="vestiment">
+          <div class="vestiment" id="vestiment">
             <v-img
               :width="whiteTraje"
               src="https://invites-now.com/wp-content/uploads/2023/01/suit-gris.png"
@@ -15,7 +15,7 @@
           </div>
         </v-col>
         <v-col cols="12" xs="12" md="6" align="center" justify="center">
-          <div class="vestiment">
+          <div class="vestiment" id="traje">
             <v-img
               :width="whiteVestido"
               src="https://invites-now.com/wp-content/uploads/2022/07/Dress_3_black-1.png"
@@ -31,14 +31,13 @@
 </template>
 
 <script>
-import Banner from "../assets/372.jpg";
+
 export default {
   name: "DressCodeView",
   data() {
     return {
       whiteTraje: 150,
       whiteVestido: 120,
-      urlImg: Banner,
     };
   },
   mounted() {
@@ -47,10 +46,34 @@ export default {
       this.whiteVestido = 100;
     }
   },
+  methods:{
+    handleScroll(){
+      const scrollY = window.scrollY;
+      const seccionDestacada = document.getElementById("scroll-dress");
+      const traje = document.getElementById('traje');
+      const vestiment = document.getElementById("vestiment");
+      const seccionTop = seccionDestacada.offsetTop + 3800;
+      const distanciaDesdeLaParteSuperior = scrollY + window.innerHeight;
+      if (distanciaDesdeLaParteSuperior >= seccionTop) {
+        traje.classList.remove("opacity");
+        vestiment.classList.remove("opacity");
+        vestiment.classList.add("animate__animated");
+        traje.classList.add("animate__animated");
+        traje.classList.add("animate__backInLeft");        
+        vestiment.classList.add("animate__backInRight");
+      } else {
+        traje.classList.remove("animate__backInLeft");
+        vestiment.classList.remove("animate__backInRight");
+      }
+    }
+  }
 };
 </script>
 
 <style scoped>
+.opacity {
+  opacity: 0;
+}
 .drees-code {
   position: relative;
   font-family: "Cormorant Garamond", serif;

@@ -3,10 +3,23 @@
     <v-row class="story" justify="center" align="center">
       <v-col cols="12" xs="12" md="5" justify="center" align="center">
         <div class="img" data-animate-effect="fadeInLeft">
-          <img src="../assets/banner3.jpg" class="img-fluid box-shadow" alt="" />
+          <img
+            src="../assets/banner3.jpg"
+            id="scroll-img"
+            v-scroll="handleScroll"
+            class="img-fluid box-shadow"
+            alt=""
+          />
         </div>
       </v-col>
-      <v-col cols="12" xs="12" md="7" justify="center" align="center">
+      <v-col
+        cols="12"
+        xs="12"
+        md="7"
+        justify="center"
+        align="center"
+        class="names-invite"
+      >
         <h1 class="invitation-title">¡Fam. Escarpulli Hernández !</h1>
         <p class="invitation-message text-center"># PASES 3</p>
         <br />
@@ -21,20 +34,39 @@
 <script>
 export default {
   name: "PassesView",
+  data() {},
+  methods: {
+    handleScroll() {
+      const scrollY = window.scrollY;
+      const seccionDestacada = document.getElementById("scroll-img");
+      const seccionTop = seccionDestacada.offsetTop + 4500;
+      const distanciaDesdeLaParteSuperior = scrollY + window.innerHeight;
+      if (distanciaDesdeLaParteSuperior >= seccionTop) {
+        seccionDestacada.classList.remove("opacity");
+        seccionDestacada.classList.add("animate__animated");
+        seccionDestacada.classList.add("animate__backInDown");
+      } else {
+        seccionDestacada.classList.remove("animate__backInDown");
+      }
+    },
+  },
 };
 </script>
 
 <style scoped>
-.img{
+.opacity {
+  opacity: 0;
+}
+.img {
   width: 450px;
 }
 
 .box-shadow {
-    background-color: rgba(255, 255, 255, 1);
-    color: #000;
-    border-radius: 0px;
-    box-shadow: 0px 100px 75px -30px rgba(155, 155, 155, 0.79);
-  }
+  background-color: rgba(255, 255, 255, 1);
+  color: #000;
+  border-radius: 0px;
+  box-shadow: 0px 100px 75px -30px rgba(155, 155, 155, 0.79);
+}
 
 #story {
   margin-top: 10%;
@@ -108,7 +140,6 @@ export default {
   }
 }
 
-
 @media screen and (max-width: 768px) {
   .invitation-title {
     margin-top: 15%;
@@ -166,9 +197,11 @@ export default {
     text-align: center;
     font-weight: 400;
   }
+}
 
-  .img{
-    width: 320px;
+@media screen and (max-width: 320px) {
+  .names-invite {
+    padding: 0px 120px 0px 120px;
   }
 }
 </style>

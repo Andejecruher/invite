@@ -55,7 +55,6 @@
 import "vue3-carousel/dist/carousel.css";
 import { defineComponent } from "vue";
 import { Carousel, Slide, Navigation } from "vue3-carousel";
-import Galery1 from "../assets/galery/1693182584061.jpg";
 import Galery2 from "../assets/galery/072A3567.jpg";
 import Galery3 from "../assets/galery/072A3583.jpg";
 import Galery4 from "../assets/galery/072A3612.jpg";
@@ -87,10 +86,6 @@ export default defineComponent({
   data: () => ({
     currentSlide: 0,
     galerys: [
-      {
-        name: "Galery1",
-        url: Galery1,
-      },
       {
         name: "Galery2",
         url: Galery2,

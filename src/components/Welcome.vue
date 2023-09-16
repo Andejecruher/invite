@@ -1,14 +1,14 @@
 <template>
-  <div class="welcome-container" >
+  <div class="welcome-container">
     <v-container id="story">
       <v-row class="story">
         <v-col cols="12" xs="12" md="5">
-          <div class="img"  data-animate-effect="fadeInLeft">
+          <div class="img" >
             <img
-            id="scroll-target"
-            v-scroll="handleScroll"
-              src="../assets/story.jpg"
-              class="img-fluid box-shadow"
+              id="scroll-target"
+              v-scroll="handleScroll"
+              :src="urlImg"
+              class="img-fluid box-shadow opacity"
               alt=""
             />
           </div>
@@ -48,28 +48,26 @@
 </template>
 
 <script>
+import Banner from "../assets/story.jpg";
 export default {
   name: "WelcomeView",
-  data() {},
+  data() {
+    return{
+      urlImg: Banner,
+    }
+  },
   methods: {
     handleScroll() {
-      // Obtenemos la posición del scroll actual
       const scrollY = window.scrollY;
-      // Obtenemos la posición superior de la sección destacada
-      const seccionDestacada = document.getElementById('scroll-target');
-      const seccionTop = seccionDestacada.offsetTop;
-      // Calculamos la distancia desde la parte superior de la página
+      const seccionDestacada = document.getElementById("scroll-target");
+      const seccionTop = seccionDestacada.offsetTop + 1000;
       const distanciaDesdeLaParteSuperior = scrollY + window.innerHeight;
-
-      // Verificamos si la sección está en el viewport
       if (distanciaDesdeLaParteSuperior >= seccionTop) {
-        console.log("🚀 ~ file: Welcome.vue:71 ~ handleScroll ~ distanciaDesdeLaParteSuperior:", distanciaDesdeLaParteSuperior)
-        // Si la sección está en el viewport, agregamos una clase CSS para animarla
-        seccionDestacada.classList.add('animate__fadeInTopRight');
+        seccionDestacada.classList.remove("opacity");
+        seccionDestacada.classList.add("animate__animated");
+        seccionDestacada.classList.add("animate__backInDown");
       } else {
-        console.log("asdasd");
-        // Si la sección no está en el viewport, eliminamos la clase CSS de animación
-        seccionDestacada.classList.remove('animate__fadeInTopRight');
+        seccionDestacada.classList.remove("animate__backInDown");
       }
     },
   },
@@ -77,6 +75,10 @@ export default {
 </script>
 
 <style scoped>
+
+.opacity {
+  opacity: 0;
+}
 .row-ainvite {
   margin-bottom: 5%;
 }
@@ -111,7 +113,7 @@ export default {
 }
 
 .invitation-title {
-  margin-top: 25%;
+  margin-top: 5%;
   font-family: "Alex Brush", cursive;
   font-size: 70px;
   color: #b59580;
@@ -132,9 +134,9 @@ export default {
 }
 /* ======= Our Story style ======= */
 .img {
-  margin-left: 35%;
-  width: 200px;
-  height: 200px;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 10%;
 }
 
 .box-shadow {
@@ -159,8 +161,8 @@ export default {
 @media (max-width: 768px) {
   .img {
     margin-left: 25%;
-    width: 200px;
-    height: 200px;
+    width: 350px;
+    height: 350px;
   }
 
   .box-shadow {
@@ -200,6 +202,28 @@ export default {
   .story-img {
     width: 60%;
     margin-left: 20%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .img {
+    margin-left: 20%;
+    width: 250px;
+  }
+}
+
+
+@media screen and (max-width: 375px) {
+  .img {
+    margin-left: 20%;
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .img {
+    margin-left: 15%;
+    width: 200px;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <v-parallax :src="urlImg">
+  <v-parallax src="https://image.freepik.com/free-photo/grey-paper-texture_1253-25.jpg">
   <v-container class="full-height">
     <v-row class="full-height" justify="center" align="center">
       <v-col cols="12" xs="12" md="6">
@@ -51,7 +51,6 @@
 </template>
 
 <script>
-import Banner from "../assets/372.jpg";
 export default {
   name: "ConfirmAttendanceForm",
   data() {
@@ -61,7 +60,6 @@ export default {
       numberOfPeople: 1,
       peopleOptions: [1, 2, 3, 4, 5],
       sendGreetings: false,
-      urlImg: Banner,
     };
   },
   methods: {
@@ -228,7 +226,7 @@ export default {
   }
   .full-height {
     margin-bottom: 30%;
-    margin-right: 0px;
+    margin-right: -10px;
     margin-top: 5%;
   }
 }

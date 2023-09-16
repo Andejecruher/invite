@@ -3,7 +3,9 @@
     <div class="full-screen">
       <div class="overlay">
         <v-card
-          class="countdown-card"
+        id="counter"
+          v-scroll="handleScroll"
+          class="countdown-card opacity"
           elevation="5"
           color="rgba(0, 0, 0, 0.4)"
           :width="widthCount"
@@ -23,7 +25,7 @@
                 <div class="number">{{ timelineEvents[2].timeRemaining }}</div>
                 <p class="number-name">Minutos</p>
               </v-col>
-              <v-col cols="3">
+              <v-col cols="3" id="scroll-count">
                 <div class="number">{{ timelineEvents[3].timeRemaining }}</div>
                 <p class="number-name">Segundos</p>
               </v-col>
@@ -37,7 +39,7 @@
 
 <script>
 import Banner from "../assets/counter.jpg";
-import Banner2 from "../assets/loader2.jpeg"
+import Banner2 from "../assets/loader2.jpeg";
 export default {
   name: "CountReverse",
   data() {
@@ -60,15 +62,30 @@ export default {
       this.widthCount = "90%";
     }
 
-    if(this.$vuetify.display.width < 768){
+    if (this.$vuetify.display.width < 768) {
       this.urlImg = Banner2;
     }
-
   },
   beforeUnmount() {
     clearInterval(this.countdownInterval);
   },
   methods: {
+    handleScroll() {
+      const scrollY = window.scrollY;
+      const seccionDestacada = document.getElementById("scroll-count");
+      const counter = document.getElementById('counter');
+      const seccionTop = seccionDestacada.offsetTop + 2500;
+      
+      const distanciaDesdeLaParteSuperior = scrollY + window.innerHeight;
+
+      if (distanciaDesdeLaParteSuperior >= seccionTop) {
+        counter.classList.remove("opacity");
+        counter.classList.add("animate__animated");
+        counter.classList.add("animate__backInDown");
+      } else {
+        counter.classList.remove("animate__backInDown");
+      }
+    },
     startCountdown() {
       this.updateCountdown(); // Llama una vez para mostrar la cuenta regresiva inmediatamente
 
@@ -103,6 +120,9 @@ export default {
 </script>
 
 <style scoped>
+.opacity {
+  opacity: 0;
+}
 .full-screen {
   position: relative;
   width: 100vw;
@@ -119,7 +139,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #B59580;
+  color: #b59580;
 }
 .countdown-card {
   font-family: monospace, sans-serif;
@@ -148,7 +168,7 @@ export default {
   font-weight: bold;
 }
 .v-card-title {
-  color: #B59580;
+  color: #b59580;
   font-family: "Alex Brush", cursive;
   display: block;
   flex: none;
@@ -184,6 +204,27 @@ export default {
   color: white;
 }
 
+@media screen and (max-width: 768px) {
+  .number {
+    font-size: 22px;
+  }
+  .number-name {
+    font-size: 16px;
+  }
+  .v-card-text {
+    font-size: 11px;
+    padding: 0;
+  }
+  .overlay {
+    left: 0;
+  }
+
+  .v-card-title {
+    font-size: 1.3em;
+    padding: 10px;
+  }
+}
+
 @media (max-width: 425px) {
   .number {
     font-size: 22px;
@@ -191,43 +232,30 @@ export default {
   .v-card-text {
     font-size: 12px;
   }
+
+  .number-name {
+    font-size: 16px;
+  }
 }
 
-@media (max-width: 375px) {
+@media screen and (max-width: 375px) {
   .number {
     font-size: 22px;
+  }
+
+  .number-name{
+    font-size: 14px;
   }
   .v-card-text {
     font-size: 12px;
   }
 }
 
-@media (max-width: 768px) {
-  .number {
-    font-size: 22px;
-  }
-  .number-name{
-    font-size: 18px;
-  }
-  .v-card-text {
-    font-size: 11px;
-    padding: 0;
-  }
-  .overlay {
-    left: 0;
-  }
-
-  .v-card-title{
-    font-size: 1.3em;
-    padding: 10px;
-  }
-}
-
-@media (max-width: 320px) {
+@media screen and (max-width: 320px) {
   .number {
     font-size: 16px;
   }
-  .number-name{
+  .number-name {
     font-size: 11px;
   }
   .v-card-text {
@@ -238,7 +266,7 @@ export default {
     left: 0;
   }
 
-  .v-card-title{
+  .v-card-title {
     font-size: 1em;
     padding: 10px;
   }
